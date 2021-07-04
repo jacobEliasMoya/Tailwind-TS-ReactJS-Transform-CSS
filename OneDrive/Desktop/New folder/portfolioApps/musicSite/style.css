@@ -1,0 +1,965 @@
+@-webkit-keyframes pop {
+  0% {
+    height: 3rem;
+    width: 3rem;
+  }
+  50% {
+    height: 3.4rem;
+    width: 3.4rem;
+  }
+  100% {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+@keyframes pop {
+  0% {
+    height: 3rem;
+    width: 3rem;
+  }
+  50% {
+    height: 3.4rem;
+    width: 3.4rem;
+  }
+  100% {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* p {
+  text-align: center;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  width: 100%;
+  background: linear-gradient(45deg, black, #2b2b2b);
+  position: relative;
+  min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 2rem;
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.scale-container::-webkit-scrollbar, .song-container::-webkit-scrollbar {
+  width: 1em;
+}
+
+.scale-container::-webkit-scrollbar-track, .song-container::-webkit-scrollbar-track {
+  background: black;
+}
+
+.scale-container::-webkit-scrollbar-thumb, .song-container::-webkit-scrollbar-thumb {
+  height: 2rem;
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.main-description {
+  z-index: 1;
+  height: 0rem;
+  width: 100%;
+  height: 1rem;
+  color: yellow;
+  text-align: left;
+  font-size: 2rem;
+  font-family: 'Dancing Script', cursive;
+  background: none;
+}
+
+.main.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: .1rem;
+  font-size: 1.5rem;
+  height: 8vh;
+  width: 100%;
+  background: white;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.main.navigation:hover .guitarIcon {
+  -webkit-animation-name: pop;
+          animation-name: pop;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+.main.navigation h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main.navigation h1 .guitarIcon {
+  margin-left: 1rem;
+  height: 3rem;
+  width: 3rem;
+  background: url("./musicIcons/002-electricguitar.svg");
+  background-size: cover;
+}
+
+.main.navigation .hamburger-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: .5rem;
+  height: 5vh;
+  width: 6vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+}
+
+.main.navigation .hamburger-menu:hover div {
+  background: rgba(187, 187, 0, 0.719);
+}
+
+.main.navigation .hamburger-menu div {
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  height: .25rem;
+  width: 100%;
+  background: black;
+  border-radius: .5rem;
+}
+
+.main.navigation .hamburger-menu:active div {
+  background: black;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.dropdown-list {
+  position: fixed;
+  opacity: .75;
+  top: 0;
+  right: 0;
+  margin-top: -15vh;
+  color: black;
+  width: 10rem;
+  height: auto;
+  background: #eeecec;
+  text-align: center;
+  list-style: none;
+  z-index: 9;
+  border-bottom-left-radius: 1rem;
+  -webkit-transition: all ease-in-out .25s;
+  transition: all ease-in-out .25s;
+  padding: .25rem;
+}
+
+.dropdown-list a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 2rem;
+  width: 100%;
+  border-bottom: .1rem solid grey;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+}
+
+.dropdown-list li:hover {
+  height: 2.25rem;
+  background: white;
+  font-weight: bold;
+}
+
+.dropdown-list .bottom {
+  border-bottom: none;
+  border-right: none;
+  border-bottom-left-radius: 1rem;
+}
+
+.dropdown-list .bottom:hover {
+  border-bottom-left-radius: none;
+}
+
+.intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  margin-top: 10vh;
+}
+
+.intro .quickNav {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  width: 100%;
+  z-index: 1;
+  font-size: 1.5rem;
+}
+
+.intro .quickNav a {
+  color: yellow;
+}
+
+.intro .intro-bc {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: url("./imgaes/guitar-in-hand.jpg");
+  background-size: cover;
+  -webkit-filter: blur(1rem);
+          filter: blur(1rem);
+  border-bottom: 2.5rem solid #5c5c5c;
+  border-top: 2.5rem solid black;
+}
+
+.intro h1 {
+  z-index: 1;
+  width: auto;
+  text-align: center;
+}
+
+.intro p {
+  text-align: center;
+  width: 40rem;
+  z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #242424;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.intro i {
+  z-index: 1;
+  color: white;
+  font-size: 3rem;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+  cursor: pointer;
+}
+
+.intro i:hover {
+  margin-top: -.5rem;
+  font-size: 3.5rem;
+  color: yellow;
+}
+
+.intro .dorian-page {
+  font-size: 2rem;
+}
+
+.intro .intro-para {
+  width: 40%;
+  font-size: 1rem;
+}
+
+.intro .intro-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+  z-index: 1;
+}
+
+.intro.p2 {
+  margin-top: 0;
+}
+
+.selectInstrument, .page2Section2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  color: white;
+}
+
+.selectInstrument *, .page2Section2 * {
+  z-index: 1;
+}
+
+.selectInstrument .majorPentatonic, .page2Section2 .majorPentatonic {
+  border-radius: 1rem;
+  height: 2.5rem;
+}
+
+.selectInstrument .majorPentatonic.two, .page2Section2 .majorPentatonic.two {
+  height: 8rem;
+  width: 20rem;
+}
+
+.selectInstrument .mixolydian, .page2Section2 .mixolydian {
+  width: 60%;
+  border-radius: 1rem;
+  height: 4rem;
+}
+
+.selectInstrument .minorPentatonic, .page2Section2 .minorPentatonic {
+  border-radius: 1rem;
+  width: 25rem;
+}
+
+.selectInstrument .homer, .page2Section2 .homer {
+  height: 20rem;
+}
+
+.selectInstrument .lydian, .page2Section2 .lydian {
+  border-radius: 1rem;
+  height: 10rem;
+  width: 25rem;
+}
+
+.selectInstrument .ionian, .page2Section2 .ionian {
+  border-radius: 1rem;
+  height: 15rem;
+}
+
+.selectInstrument .para-div, .page2Section2 .para-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.selectInstrument p, .page2Section2 p {
+  width: 50%;
+  color: white;
+  background: #242424;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.selectInstrument .theory, .page2Section2 .theory {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+}
+
+.selectInstrument .guitar, .page2Section2 .guitar {
+  z-index: 1;
+  height: 8rem;
+  width: 8rem;
+  padding: 1rem;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.selectInstrument .instrument-container, .page2Section2 .instrument-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: .5rem;
+  z-index: 1;
+  height: auto;
+  width: 75%;
+  padding: 2rem;
+  background: white;
+  border: .5rem solid black;
+  opacity: .5;
+}
+
+.selectInstrument .instrument-container .acoustic, .page2Section2 .instrument-container .acoustic {
+  background: url("./musicIcons/001-acousticguitar.svg");
+  background-size: cover;
+}
+
+.selectInstrument .instrument-container .electric, .page2Section2 .instrument-container .electric {
+  background: url("./musicIcons/002-electricguitar.svg");
+  background-size: cover;
+}
+
+.selectInstrument .instrument-switches, .page2Section2 .instrument-switches {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: .5rem;
+  z-index: 1;
+  height: auto;
+  width: 50%;
+  padding: 2rem;
+}
+
+.selectInstrument .instrument-switches button, .page2Section2 .instrument-switches button {
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+  height: 2rem;
+  width: 8rem;
+  border-radius: .5rem;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+.selectInstrument .instrument-switches button:hover, .page2Section2 .instrument-switches button:hover {
+  -webkit-box-shadow: 0rem 0rem 1rem black;
+          box-shadow: 0rem 0rem 1rem black;
+}
+
+.selectInstrument .instrument-switches button:active, .page2Section2 .instrument-switches button:active {
+  background: white;
+  color: black;
+}
+
+.selectInstrument .select-bc, .page2Section2 .select-bc {
+  height: 100vh;
+  width: 100%;
+  z-index: 0;
+  position: absolute;
+  background: url("./imgaes/guitr-desk.jpg");
+  background-size: cover;
+  -webkit-filter: blur(1rem);
+          filter: blur(1rem);
+  border-bottom: 2.5rem solid #5c5c5c;
+}
+
+.selectInstrument p, .page2Section2 p {
+  font-size: 1rem;
+}
+
+.genre-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.genre-selection * {
+  z-index: 1;
+}
+
+.genre-selection h1 {
+  color: white;
+}
+
+.genre-selection .genre-bc {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: url("./imgaes/genreBackground.jpg");
+  background-size: cover;
+  -webkit-filter: blur(1.5rem);
+          filter: blur(1.5rem);
+  border-bottom: 2.5rem solid #5c5c5c;
+  border-top: 2.5rem solid #5c5c5c;
+}
+
+.genre-selection .genre-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-radius: .5rem;
+  z-index: 1;
+  height: auto;
+  width: 75%;
+  padding: 2rem;
+  background: white;
+  border: .5rem solid black;
+  opacity: .5;
+}
+
+.genre-selection .genre-container h1 {
+  font-size: 2.5rem;
+  color: black;
+  margin: .5rem;
+}
+
+.genre-selection .genre-switches {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.genre-selection .genre-switches button {
+  margin: 1rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  background: black;
+  -webkit-box-shadow: inset 0 0 .25rem .25rem white;
+          box-shadow: inset 0 0 .25rem .25rem white;
+}
+
+.genre-selection .genre-switches button:active {
+  background: white;
+  -webkit-box-shadow: inset 0 0 .25rem .25rem black;
+          box-shadow: inset 0 0 .25rem .25rem black;
+}
+
+.scales {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  padding-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.scales * {
+  z-index: 0;
+}
+
+.scales .scales-bc {
+  border-top: 2.5rem solid black;
+  border-bottom: 2.5rem solid #0B0B0B;
+  z-index: -1;
+  position: absolute;
+  background: url("./imgaes/Generic-Music-Notes (1).jpg");
+  -webkit-filter: blur(1rem);
+          filter: blur(1rem);
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+.scales .scale-container {
+  overflow: hidden;
+  border-radius: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 50vh;
+  width: 75%;
+  margin-top: 2rem;
+  overflow: scroll;
+  background: black;
+  border: .25rem solid white;
+}
+
+.scales .scale-container a {
+  color: white;
+  text-decoration: none;
+}
+
+.scales .scale-container .scale {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  height: 20rem;
+  width: 20rem;
+  background: black;
+  margin: 2.5rem;
+  border-radius: .5rem;
+  -webkit-box-shadow: inset 0 0 1rem 1rem grey;
+          box-shadow: inset 0 0 1rem 1rem grey;
+  cursor: pointer;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+}
+
+.scales .scale-container .scale:hover {
+  background: #4e4d4d;
+  height: 21rem;
+  width: 21rem;
+}
+
+.scales .scale-container .scale img {
+  width: inherit;
+}
+
+.song-rec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  padding-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.song-rec * {
+  z-index: 0;
+}
+
+.song-rec .song-container {
+  overflow: hidden;
+  border-radius: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 50vh;
+  width: 100%;
+  margin-top: 2rem;
+  overflow: scroll;
+  background: black;
+  border: .25rem solid white;
+}
+
+.song-rec .song-container .song {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  height: 20rem;
+  width: 20rem;
+  background: black;
+  margin: 2.5rem;
+  border-radius: .5rem;
+  -webkit-box-shadow: inset 0 0 1rem 1rem grey;
+          box-shadow: inset 0 0 1rem 1rem grey;
+  cursor: pointer;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+}
+
+.song-rec .song-container .song:hover {
+  background: #4e4d4d;
+  height: 21rem;
+  width: 21rem;
+}
+
+.song-rec .song-container .song img {
+  width: inherit;
+}
+
+.song-rec .song-bc {
+  border-top: 2.5rem solid black;
+  z-index: -1;
+  position: absolute;
+  background: url("./imgaes/musicianCollage.jpg");
+  -webkit-filter: blur(1rem);
+          filter: blur(1rem);
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    text-align: center;
+  }
+  * h1 {
+    font-size: 2.5rem;
+  }
+  .main.navigation h1 {
+    font-size: 1.25rem;
+  }
+  .main.navigation h1 .guitarIcon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .dropdown-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    border-radius: 0rem;
+  }
+  .dropdown-list li {
+    width: 25%;
+    border-bottom: none;
+    border-right: .1rem solid grey;
+  }
+  .intro p, .intro.p2 p {
+    width: 100%;
+  }
+  .intro .intro-container img, .intro.p2 .intro-container img {
+    margin-top: 1rem;
+    width: 75%;
+  }
+  .page2Section2 {
+    height: 150vh;
+  }
+  .page2Section2 .instrument-container {
+    width: 100%;
+  }
+  .page2Section2 p {
+    width: 100%;
+  }
+  .page2Section2 .theory {
+    font-size: 2rem;
+  }
+  .page2Section2 img {
+    width: 100%;
+  }
+  .page2Section2 .select-bc {
+    height: 150vh;
+  }
+  .para-div p {
+    width: 100%;
+  }
+  .genre-selection .genre-container {
+    width: 100%;
+  }
+  .genre-selection .genre-switches {
+    width: 100%;
+  }
+  .scales .scale-container {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

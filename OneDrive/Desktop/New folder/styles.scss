@@ -1,0 +1,1672 @@
+$customBlue :rgb(89, 205, 243);
+
+@mixin flexCenterCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+@mixin flexCenterRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+@mixin easyTransition {
+    transition: all ease .25s;
+
+}
+
+
+@mixin name {
+    
+}
+
+*{
+
+    img{
+        user-select: none;
+    }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+
+    a{
+        cursor: pointer;
+        text-decoration: none;
+        color: rgb(208, 208, 208);
+    }
+    
+}
+
+
+body{
+    @include flexCenterCol();
+    transition: all ease .5s;
+    width: 100%;
+    justify-content: space-between; 
+    overflow: scroll;
+    overflow-x: hidden;
+    height: auto;
+    background: black;
+
+    .section{
+        @include flexCenterCol();
+        justify-content: space-between  ;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        color: rgb(208, 208, 208);
+        background: url('/customPhotos/main\ page.jpg');
+        background-size: 100% 100vh;
+        font-family: 'Merriweather', serif;
+
+    }
+    
+    nav{
+        transition: all ease .5s;
+        overflow: hidden;
+        img{
+            transition: all ease 5s;
+            position: absolute;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+
+        }
+
+        .cloud1{
+            top: 10%;
+            left: 0%;
+            animation-name: floatCloud1;
+            height: 85%;
+            opacity: .6;
+            z-index: 0;
+
+        }
+
+        .cloud2{
+            bottom: -10%;
+            right: 0%;
+            height: 55%;
+            animation-name: floatCloud2;
+            animation-duration: 7s;
+            opacity: .4;
+            z-index: 0;
+        }
+
+        .row{
+            @include flexCenterRow();
+            justify-content: space-between;
+            width: 90%;
+            height: 20%;
+
+        }
+
+        .top.row{
+            z-index: 100;
+
+            .logo{
+                margin-top: -1rem;
+                margin-left: -3rem;
+                transition: all ease .25s;
+                cursor: pointer;
+                width: 10rem;
+                height:10rem;
+                background: url(/customPhotos/logo.png);
+                background-size: contain;
+                border-radius: 50%;
+                &:hover{
+                    cursor: pointer;
+                    animation-name: smallJump;
+                    animation-duration: .35s;
+                    animation-fill-mode: forwards;   
+                    background: url(/customPhotos/myWorlBlu.png);
+                    background-size: contain;
+                    border-radius: 50%;
+    
+
+                }
+
+            }
+
+            .mobileUl{
+                display: none;
+                font-size: 1.5rem;
+                margin-top: .25rem;
+                margin-right: 0rem;
+                transition: all ease .25s;
+
+
+                li{
+                    display: none;
+                }
+
+                .hamburgers{
+                    cursor: pointer;
+                    @include flexCenterCol();
+                    transition: all ease .5s;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    height: 2rem;
+                    width: 4rem;
+                    div{
+                        width: 65%;
+                        height: 10%;
+                        background: white;
+                        border-radius: 1rem;
+                        transition: all ease .25s;
+                    }
+                    &:hover div{
+                        background: $customBlue ;
+                    }
+                    &:hover .one{
+                        width: 35%;
+                        background: $customBlue ;
+                    }                
+                    &:hover .three{
+                        background: $customBlue ;
+                        width: 55%;
+    
+                    }
+                }
+            }
+
+
+            ul{
+                margin-top: -2.5rem;
+                margin-right: -2.5rem;
+                width: auto;
+                height: 100%;
+                @include flexCenterRow();
+                width: auto;
+                list-style: none;
+                
+                li{
+                    @include flexCenterCol();
+                    @include easyTransition();
+                    width: auto;
+                    height: 100%;
+                    margin-left: 1rem;
+                    padding: .1rem;
+                    font-weight: bold;
+                    letter-spacing:.1rem ;
+
+
+                    &:hover{
+                        color: $customBlue;
+                        cursor: pointer;
+                        animation-name: smallJump;
+                        animation-duration: .35s;
+                        animation-fill-mode: forwards;   
+                    }
+
+                    //maybe add an ::active effect?? think about it
+                }
+            }
+    
+    
+        }
+        
+        .middle.row{
+            width: 100%;
+            @include flexCenterCol();
+            h1{
+                text-shadow: 0 0 1rem black;
+                font-family: 'Merriweather', serif;
+                z-index: 1;
+
+                span{
+                    font-family: merr;
+                    font-size: 2rem;
+                    padding: .25rem;
+                    font-size: 4rem;
+                    color: white;
+                    font-weight: bold;
+                }
+
+                .x{
+                    color: white;
+                    font-size: 3rem;
+                }
+            }
+
+            p{
+                text-shadow: 0 0 1rem black;
+                z-index: 1;
+                letter-spacing: .05rem
+                ;  
+                margin: 2rem;
+                width: 60%;
+                span{
+                    font-weight: bold;
+                    color: $customBlue;
+                }
+            }
+
+        }
+
+        .bottom.row{
+            flex-direction: column;
+            justify-content: center;
+            h1{
+                margin: 1rem;
+                span{
+                    color: $customBlue;
+                }
+            }
+        }
+
+    }   
+
+    .work.section{
+        @include flexCenterCol(); 
+        justify-content: space-evenly;
+        background: url('/customPhotos/background2.jpg');
+        background-size:100% 100vh  ;
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+
+
+        .row{
+            // border: 1px solid white;
+            @include flexCenterRow();
+            flex-wrap: wrap;
+            transition: all ease 1.5s ;
+            width: 100%;
+            height: 20%;
+            margin: 2rem;
+
+
+            img{
+                position: absolute;
+                transform: rotate(90deg);
+                animation-name: smallJump;
+                animation-duration: 8s;
+                animation-fill-mode: forwards;  
+                animation-iteration-count: infinite; 
+                overflow: '';
+                opacity: 1;
+                
+
+            }
+            .two{
+                
+                transform: rotate(0deg);
+                animation-duration: 10s;
+
+            }
+            .three{
+                transform: rotate(0deg);
+                animation-duration: 6s;
+
+            }
+            .four{
+                transform: rotate(0deg);
+                animation-duration: 8s;
+
+            }
+
+            .wrapper{
+                @include flexCenterCol();
+                position: relative;
+                height: auto;
+                width: auto;
+                .container{
+                    @include flexCenterCol();
+                    cursor: pointer;
+                    border-radius: .25rem;
+                    z-index: 1;
+                    height: 10rem;
+                    width: 14rem;
+                    opacity: .7;
+                    box-shadow: 0 0 2rem $customBlue;
+                    transition: all ease .25s;
+                    &:hover{
+                        box-shadow: 0 0 2rem white;
+                        opacity: 1;   
+                        background-size:105% 105% ;
+                    }
+
+                }
+                .projectOne{
+                    background: url('/customPhotos/previewCH.png');
+                    background-size:100% 100% ;
+                }
+                .projectTwo{
+                    background: url('/customPhotos/sitePreviewMJS.png');
+                    background-size:100% 100% ;
+
+                }
+                .projectThree{
+                    background: url('/customPhotos/sitePreviewSG.png');
+                    background-size:100% 100% ;
+
+                }
+                .projectFour{
+                    background: url('/customPhotos/sitePreviewPS.png');
+                    background-size:100% 100% ;
+                }
+
+            }
+        }
+        
+        .top{
+            margin-top: 2.5rem;
+            @include flexCenterCol();
+            opacity: 0;
+            transition: all ease .25s;
+
+            h1{
+                font-size: 2rem;
+                text-shadow: 0 0 .5rem black;
+            }
+
+
+            img{
+                height: 15rem;
+                opacity: .7;
+            }
+        }
+        
+        .middle{
+            @include flexCenterCol();
+
+            p{
+                z-index: 100;
+                width: 55%;
+                text-shadow: 0 0 1rem black;
+                a{
+                    cursor: pointer;
+                    text-decoration: underline;
+                    color: $customBlue;
+
+                }
+                span{
+                    color: $customBlue;
+                }
+            }
+
+
+    
+    
+            img{
+                z-index: 1;
+                animation: none;
+                position: absolute;
+                transform: rotate(25deg);
+                opacity: 1;
+                width: 20rem;
+                height:20rem;
+
+            }
+          
+            .moon{
+                z-index: 0;
+                animation-name: rotater;
+                animation-duration: 25s;
+                animation-iteration-count: infinite;
+                top: 10%;
+                right: 45%;
+                height: 18rem;
+                width: 18rem;
+                left: 120%;
+            }
+
+            
+        
+        }
+        .bottom{
+            justify-content: space-evenly;
+            width: 100%;
+            height: 55%;
+
+            *{
+                transition: all ease .25s;
+            }
+            img{
+                height: 15rem;
+                opacity: .5;
+            }
+            #workSecWrapper{
+                height: 9rem;
+                width: 13rem;
+                cursor: pointer;
+
+
+                .container{ 
+                    height: 100%;
+                    width: 100%;
+                        *{
+                        color: black;
+                        transition: all ease .25s;
+                    }
+    
+                    .inner{
+                        border-radius: 1rem;
+                        display: none;
+                        height: 90%;
+                        width: 90%;
+                        border: none;
+                        box-shadow: 0 0 2rem $customBlue;
+                        transition: all ease .25s;
+                        background: black;
+                        opacity: .7; 
+                        button{
+                            height: auto;
+                            width: auto;
+                            padding: .25rem;
+                            border-radius: .5rem;
+                            background: $customBlue;
+                            color: black;
+                            a{  
+                                text-decoration: none;
+                                color: black;
+                                height: 100%;
+                                width: 100%;
+                                cursor: pointer;
+                            }
+
+
+                        }
+                    }
+    
+                }
+
+                &:hover{
+                    .inner{
+                        @include flexCenterCol();
+                        justify-content: space-evenly;
+                        color: black;
+
+                        i{
+                            @include flexCenterCol();
+                            color: white;
+                            transition: all ease .25s;
+                            font-size: 1.5rem;
+                            text-shadow: 0 0 1rem $customBlue;
+                            &:hover{
+                                font-size: 1.75rem;
+                                text-shadow: 0 0 1rem white ;
+                                color: $customBlue;
+
+
+                            }
+                        }
+
+
+                        button{
+                            background: white;
+                            height: auto;
+                            width: auto;
+                            &:hover{
+                                background: $customBlue;
+                            }
+                            a{
+                                color: black;
+                                height: 100%;
+                                width: 100%;
+                                cursor: pointer;
+                            }
+                        }
+
+                    } 
+                }
+
+
+            }
+
+            .wrapper{
+                transition: all ease 1s;
+            }
+
+            .wrapper.one{
+                transition-delay: .125s ;
+            }
+
+            .wrapper.two{
+                transition-delay: .25s ;
+
+            }
+
+            .wrapper.three{
+                transition-delay: .375s ;
+
+            }
+
+            .wrapper.four{
+                transition-delay: .5s ;
+
+            }
+            z-index: 99;
+        }
+    }
+
+    .experience.section{
+        background: url('./customPhotos/starryNight.png');
+        overflow: hidden;
+        position: relative;
+
+        h1{
+            font-size: 2rem;
+        }
+
+
+        .row{
+            width: 100%;
+            height: 27%;
+    
+        }
+
+        .top{
+            @include flexCenterRow();
+            justify-content: space-between;
+            transition: all ease 1s;
+
+            .container{
+                @include flexCenterCol();
+                justify-content: space-evenly;
+                width: 40%;
+                height: auto;
+                z-index: 100;
+                span{
+                    color: $customBlue;
+
+                }
+                p{
+                    font-size:1rem;
+                    width: 80%;
+                    
+                }
+
+                h1{
+                    span{
+                        font-size: 2rem;
+                        text-shadow: 0 0 1rem $customBlue;
+    
+                    }
+                }
+            }
+
+            .design{
+                font-size: 1rem;
+            }
+        }
+
+        .topper{
+            font-size: 1.35rem;
+            @include flexCenterCol();
+        }
+        
+        .bottom{
+            position: relative;
+            width: 100%;
+            img{
+                opacity: none;
+                transition: all ease;
+                position: absolute;
+                width: 100%;
+                height: 350px;
+                bottom: 0;
+                left: 0;
+                animation-name: oceanWaveOne;
+                animation-duration: 2.5s;
+                animation-iteration-count: infinite;
+                animation-fill-mode: forwards;
+            }
+
+            .water2,.water1{
+                width: 120vw;
+                margin-left: -5%;
+                margin-bottom: -5rem;
+                animation-name: oceanWaveTwo;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                z-index: 3;
+            }
+
+            .water1{
+                margin-bottom: -3rem;
+                animation-name: oceanWaveOne;
+                animation-duration: 4.5s;
+                animation-iteration-count: infinite;
+                z-index: 1;
+
+            }
+
+            .bouy{
+                animation-name: oceanWaveTwoX;
+                animation-duration: 4.5s;
+                height: 16rem;
+                width: 9rem;
+                z-index: 2;
+            }
+        }
+    }
+
+    .about.section{
+
+        @include flexCenterCol();
+        justify-content: space-evenly;
+        background: url('./customPhotos/background3.jpg');
+        background-size: 100% 100%;
+        position: relative;
+        overflow: visible;
+
+        .waterBreak{
+            position: absolute;
+            transform: rotate(180deg);
+            width: 100%;
+            top: -15%;
+            z-index: 10;
+            height: 250px;
+            animation-name: oceanWaveTwoW;
+            animation-duration: 4.5s;
+            animation-iteration-count: infinite;
+
+        }
+
+        h1{
+            @include flexCenterCol();
+            z-index: 11;
+            height: 20%;   
+            width: 100%;
+        }
+
+        p{
+            padding-top: 2rem;
+            height: 30%;
+            transition: all ease 1s;
+            width: 65%;
+            span{
+                color: $customBlue;
+            }
+
+        }
+
+        .bubbleContainer{            
+            @include flexCenterRow();
+            justify-content: space-evenly;
+            min-height: 35%;
+            height: auto;
+            flex-wrap: wrap;  
+            width: 100%;
+            .bubble{
+                @include flexCenterCol();
+                border-radius: 50%;
+                height: 8rem;
+                width: 8rem;
+                background: url('./customPhotos/bubble.png');
+                background-size: 100% 100%;
+                opacity: .5;
+                cursor: pointer;
+                transition: all ease .5s;
+                animation-name: oceanWaveTwoX;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                z-index: 2;
+
+
+                img{
+                    transition: all ease .5s;
+                    height: 3rem;
+                    width: 3rem;
+                }
+
+                &:hover{
+                    width: 8.5rem;
+                    height: 8.5rem;
+                    opacity: 1;
+                    box-shadow: 0 0 1rem white;
+
+                    img{
+                        height: 150%;
+                        width: 150%;
+                    }
+                }
+
+
+
+            }
+            .two{
+                animation-duration: 11s;
+                background: url('./customPhotos/bubble3.png');
+                background-size: 100% 100%;
+            }
+            .three{
+                animation-duration: 9s;
+                background: url('./customPhotos/bubble4.png');
+                background-size: 100% 100%;
+
+                
+            }
+            .four{
+                animation-duration: 8s;
+                background: url('./customPhotos/bubble2.png');
+                background-size: 100% 100%;
+
+
+                
+            }
+            // .five{
+            //     animation-duration: 7s;
+            //     opacity: .2;
+                
+            // }
+
+        }
+    }
+
+    .contact.section{
+        @include flexCenterCol();
+        justify-content: space-evenly;
+        background: url('./customPhotos/background4.jpg');
+        background-size: 100% 100vh;
+        position: relative;
+        h1{
+            z-index: 100;
+        }
+        p{
+            transition: all ease 1s;
+            z-index: 100;
+
+            font-size: .75rem;
+            height: .1rem;
+            overflow: visible;
+            span{
+                color: $customBlue;
+            }
+        }
+    
+        .jellyF,.jellyF2{
+            position: absolute;
+            height: 7rem;
+            width: 7rem;
+            top: 15%;
+            left: 5%;
+            animation-name: oceanWaveTwoJ;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            opacity: .6;
+            z-index: 99;
+            transition: all 40s;
+        }  
+
+        .jellyF2{
+            z-index: 99;
+            position: absolute;
+            height: 5rem;
+            width: 5rem;
+            left: 85%;
+            top: 30%;
+            animation-duration: 6.5s;
+            transition: all 50s;
+
+        }
+
+        .jellyF3{
+            z-index: 99;
+            position: absolute;
+            animation-name: oceanWaveTwoJ;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            transform: rotate(90deg);
+            height: 8rem;
+            width: 8rem;
+            left: 25%;
+            top: 70%;
+            animation-duration: 6.5s;
+            transition: all 60s;
+
+        }
+
+        .jellyF4{
+            position: absolute;
+            animation-name: oceanWaveTwoJ;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            z-index: 99;
+            height: 8rem;
+            width: 8rem;
+            left: 65%;
+            top: 55%;
+            animation-duration: 6.5s;
+            transition: all 70s;
+
+        }
+
+
+
+        .contactForm{
+            transition: all ease 1s;
+            background: none;
+            width: 65%;
+            z-index: 100;
+            
+
+            *{
+                transition: all ease 1s;
+
+                padding: .5rem;
+            }
+            @include flexCenterCol();
+            min-height: 30%;
+            color: $customBlue;
+    
+            input{
+                width: 50%;
+                background: none;
+                border: none;
+                border-bottom: .125rem solid white;
+                color: white;
+    
+    
+            }
+            textarea{
+                width: 50%;
+                height: auto;
+                background: none;
+                color: white;
+                border: none;
+                border-bottom: .125rem solid white;
+
+    
+            }
+            .end{
+                color: $customBlue;
+                width: auto;
+                cursor: pointer;
+                // &hover{
+
+                // }
+            }    
+        }
+    }
+
+    .siteStartUp.section{
+        @include fl;
+        background: black;
+        position: fixed;
+        top: 0%;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        z-index: 100;   
+        animation-name: loadIn2;
+        animation-duration: 6.5s;
+        // 8 second difference needed for smooth transition!:)
+        animation-fill-mode: forwards;      
+  
+
+        img{
+            width: 10rem;
+            height:10rem;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);            
+            transition: all ease .25s;
+            animation-name: leaveSmoothly;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;       
+            animation-delay: 1s; 
+        }
+    }
+
+    
+
+}
+
+.mainText{
+    transition: all ease 1s;
+}
+
+.contactLinks{
+    transition: all ease .5s;
+    z-index: 100;
+    width: 35%;
+    height: .1rem;
+    @include flexCenterRow();
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: visible;
+
+
+
+    .wplink{
+        @include flexCenterCol();
+        opacity: .5;
+        height: auto;
+        width: auto;
+        overflow: visible;
+        animation-name: oceanWaveTwoX;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+
+        *{
+            transition: all ease .25s;
+        }
+        img{
+            height: 3.5rem;
+            width: 3.5rem;
+            overflow: visible;
+
+        }
+        i{
+            @include flexCenterCol();
+            height: 3.3rem;
+            width: 3.3rem;
+            font-size: 3.5rem;
+            color: black;
+            border: .1rem solid rgb(205, 205, 205);
+            border-radius: 50%;
+            background: rgb(205, 205, 205);
+            overflow: visible;
+
+        }
+        &:hover{
+            opacity: 1;
+            img{
+                height: 3.8rem;
+                width: 3.8rem;
+            }
+            i{
+                font-size: 4rem;
+                height: 3.8rem;
+                width: 3.8rem;
+    
+            }
+    
+        }
+    }
+
+    .last{
+        background:rgb(205, 205, 205);
+        border-radius: 50%;
+        img{
+            height: 3.5rem;
+            width: 3.5rem;
+        }
+    }
+
+} 
+
+
+@keyframes loadIn {
+    0%{
+
+    }
+    25%{
+        opacity: .75;
+        top: 35%;
+        left: 42%;
+        height: 15rem; 
+        width: 15rem;
+    }
+    50%{
+        top: 35%;
+        left: 42%;
+        height: 10rem; 
+        width: 10rem;
+        opacity:1;
+
+    }
+    75%{
+        top: 35%;
+        left: 42%;
+        height: 10rem; 
+        width: 10rem;
+        opacity:1;
+    }
+    100%{
+        height: 10rem; 
+        width: 10rem;
+        top: 35%;
+        left: 42%;
+        opacity:0;
+    }
+    
+}
+
+@keyframes loadIn3 {
+    0%{
+        opacity: 0;
+        height: 15rem; 
+        width: 15rem;
+        top: 35%;
+        left: 42%;
+
+    }
+    25%{
+        opacity: .75;
+        top: 35%;
+        left: 42%;
+        height: 15rem; 
+        width: 15rem;
+
+    }
+    50%{
+        top: 35%;
+        left: 42%;
+        height: 6rem; 
+        width: 6rem;
+        opacity:1;
+
+    }
+    75%{
+        top: 35%;
+        left: 42%;
+        height: 6rem; 
+        width: 6rem;
+        opacity:1;
+    }
+    100%{
+        height: 6rem; 
+        width: 6rem;
+        top: 0%;
+        left: 0%;
+        opacity:0;
+    }
+    
+}
+
+@keyframes loadIn2 {
+
+    0%{
+        opacity: 1;
+        z-index: 100;
+        height: 100vh;
+        width: 100%;
+    }
+    75%{
+        opacity: 1;
+        z-index: 100;
+        height: 100vh;
+        width: 100%;
+
+
+    }
+    90%{
+        z-index: 100;
+        opacity: 0;
+        height: 100vh;
+        width: 100%;
+
+    }
+
+    99%{
+        z-index: 100;
+        opacity: 0;
+        height: 0vh;
+        width: 0%;
+
+    }
+
+
+    100%{
+        z-index: 0;
+        opacity: 0;
+        height: 0vh;
+        width: 0%;
+
+    }
+    
+}
+
+@keyframes smallJump {
+    0%{
+        transform: rotate(0deg);
+        margin-bottom: 0rem;
+    }
+    50%{
+        transform: rotate(8deg);
+        margin-bottom: .5rem;
+    }
+    80%{
+        margin-bottom: 0rem;
+        transform: rotate(0deg);
+
+    }
+    90%{
+        margin-bottom: .25rem;
+        transform: rotate(-5deg);
+
+    }
+    100%{
+        margin-bottom: 0rem;
+        transform: rotate(0deg);
+
+    }
+    
+}
+
+@keyframes rotater {
+    0%{
+        transform: rotate(0deg);
+        right: 45%;
+
+    }
+    50%{
+        transform: rotate(90deg);
+        right: 40%;
+
+
+    }    
+    100%{
+        transform: rotate(0deg);
+        right: 45%;
+
+    }
+}
+
+@keyframes smallArrowPoint{
+    0%{
+        margin-top: .25rem;
+    }
+    25%{
+        margin-top: 0rem;
+    }
+    50%{
+        margin-top: .25rem;
+    }
+    75%{
+        margin-top: 0rem;
+    }
+    100%{
+        margin-top: .25rem;
+    }
+
+
+
+
+}
+
+@keyframes floatCloud1{
+    0%{
+        margin-top: 0rem;
+        transform: rotate(0deg);
+        margin-left: 0rem;
+
+    }
+    50%{
+
+        transform: rotate(10deg);
+        margin-top: .25rem;
+        margin-left: 1.5rem;
+
+    }
+    100%{
+        transform: rotate(0deg);
+        margin-top: 0rem;
+        margin-left: 0rem;
+
+    }
+
+}
+@keyframes floatCloud2{
+    0%{
+        transform: rotate(10deg);
+        margin-top: 0rem;
+        margin-right: 0rem;
+
+    }
+    50%{
+        transform: rotate(-5deg);
+        margin-top: .1rem;
+        margin-right: 3rem;
+
+    }
+    100%{
+        transform: rotate(10deg);
+        margin-top: 0rem;
+        margin-right: 0rem;
+
+    }
+}
+
+@keyframes appearSmoothly{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes leaveSmoothly{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes heartBeat{
+    0%{
+        opacity: 1;
+        transform: rotate(1deg);
+
+    }
+    50%{
+        opacity: .3;
+        transform: rotate(3deg);
+
+
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(1deg);
+
+
+    }
+}
+
+@keyframes oceanWaveOne{
+    0%{
+        transform: rotate(1deg);
+        margin-left: -5%;
+
+    }
+    50%{
+        transform: rotate(0deg);
+        margin-left: 0%;
+
+    }
+    100%{
+        transform: rotate(1deg);
+        margin-left: -5%;
+
+
+    }
+}
+
+@keyframes oceanWaveTwo{
+    0%{
+        transform: rotate(-1.5deg);
+        margin-left: -1.5%;
+    }
+    50%{
+        transform: rotate(0deg);
+        margin-left: 0%;
+
+    }
+    100%{
+        transform: rotate(-1.5deg);
+        margin-left: -1.5%;
+
+
+    }
+}
+
+@keyframes oceanWaveTwoX{
+    0%{
+        transform: rotate(-5deg);
+        margin-left: -1.5%;
+        margin-bottom: -.25rem;
+        left: 45%;
+
+    }
+    50%{
+        transform: rotate(5deg);
+        margin-left: 0%;
+        margin-bottom: .5rem;
+        left: 46%;
+
+
+
+    }
+    100%{
+        transform: rotate(-5deg);
+        margin-left: -1.5%;
+        margin-bottom: -.25rem;
+        left: 45%;
+
+
+
+
+    }
+}
+
+@keyframes oceanWaveTwoJ{
+    0%{
+        transform: rotate(-5deg);
+        margin-left: -1.5%;
+        margin-bottom: -.25rem;
+    }
+    50%{
+        transform: rotate(5deg);
+        margin-left: 0%;
+        margin-bottom: .5rem;
+    }
+    100%{
+        transform: rotate(-5deg);
+        margin-left: -1.5%;
+        margin-bottom: -.25rem;
+    }
+}
+
+@keyframes oceanWaveTwoW{
+    0%{
+        top: -16.5%;
+        opacity: 1;
+    }
+    50%{
+        top: -17.5%;
+        opacity: 1;
+
+    }
+    100%{
+        top: -16.5%;
+        opacity: 1;
+
+    }
+}
+
+@keyframes oceanWaveTwoZ{
+    0%{
+        top: -16.5%;
+        opacity: 1;
+    }
+    50%{
+        top: -15.5%;
+        opacity: 1;
+
+    }
+    100%{
+        top: -16.5%;
+        opacity: 1;
+
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    body {
+        
+        .section{
+            min-height: 100vh;
+
+            *{
+                background-size: 100% 100vh ;
+            }
+        }
+
+        nav,main{
+            .cloud1{
+                height: 65%;
+            }
+
+            .cloud2{
+                height: 35%;
+            }
+
+            .top.row{
+
+                .logo{
+                    width: 6rem;
+                    height:6rem;
+                    margin-left: 0rem;
+                    margin-top: 0rem;
+                } 
+
+                ul{
+                    display: none;
+                }
+            
+                .mobileUl{
+                    @include flexCenterRow();
+                    height : 100%; 
+                    width : auto; 
+                }
+
+            }
+
+            .middle.row{
+                p{
+                    width: 95%;
+                }
+            }
+
+
+        }
+
+        .work.section{
+            .wrapper{
+                margin: 1rem;
+                img{
+                    height: 10rem;
+                }
+            }
+
+        }
+
+        #workSecWrapper{
+            .container{
+                height: 7rem;
+                width: 11rem;
+
+            }
+        }
+
+        #aboutSection{
+            .bubbleContainer{
+                div{
+                    height: 6rem;
+                    width: 6rem;
+                }
+            }
+        }
+
+        #contactSection{
+            form{
+                width: 80%;
+                *{
+                    width: inherit;
+                }
+            }
+            .contactLinks{
+                width: 55%;
+            }
+
+        }
+
+        .siteStartUp.section{
+            img{
+                height: 6rem;
+                width: 6rem;            
+            }
+        }
+
+        #expSection{
+            height: 150vh;
+            .top{
+                height: 100%;
+                *{
+                    width:95%;
+                }
+                @include flexCenterCol();
+                justify-content: space-evenly;
+                .container{
+                    flex-direction: column;
+                    padding: 1rem;
+                }
+
+                .development{
+                    margin-top: 1rem;
+                }
+        
+            }
+            .bottom{
+                .water1{
+                    height: 200px;
+
+                }
+                .water2{
+                    height: 100px;
+                    margin-bottom: -4%;
+                }
+                .bouy{
+                    height: 10rem;
+                    width: 6rem;
+                }
+            }
+        }
+
+    
+    }
+
+
+}
+
+
+@media only screen and (max-width: 700px) {
+
+    body {
+
+        .section{
+            .cloud1{
+                height: 45%;
+                top: 0%;
+                left: -10%;
+            }
+
+            .cloud2{
+                height: 15%;
+                bottom: 0%;
+            }
+        }
+
+        nav{
+            .middle{
+                p{
+                    width: 100%;
+                }
+            }
+        }
+        
+        .work.section{
+            .row{
+                @include flexCenterCol();
+            }
+            .wrapper{
+                margin: 1rem;
+                img{
+                    height: 8rem;
+                }
+            }
+            .middle{
+                .moon{
+                    margin-left: -10rem;
+                    top: 8%;
+                    height: 5rem;
+                    width: 5rem;
+                }
+
+                p{
+                    width: 95%;
+                }
+            
+            }
+
+            .bottom{
+                width: 100%;
+                #workSecWrapper{
+                    margin: 1rem;
+                    height: 7rem;
+                    width:9rem;
+                }
+        
+                
+            }
+
+
+        }
+
+        #contactSection{
+            form{
+                width: 95%;
+                *{
+                    width: inherit;
+                }
+            }
+            .contactLinks{
+                width: 100%;
+            }
+        }
+
+        #aboutSection{
+
+            .waterBreak{
+                height: 200px;
+                top: -10%;
+            }
+
+
+            p{
+                width: 95%;
+            }
+            .bubbleContainer{ 
+
+                div{
+                    height: 4rem;
+                    width: 4rem;
+                }
+            }
+        }
+
+        #expSection{
+            height: 150vh;
+        }
+
+
+
+
+    }
+}
+
+@media only screen and (max-height: 550px) {
+
+    body {
+        
+        .section{
+            height: 200vh;
+            width: 100%;
+            background-size: 100% 200vh ;
+        }
+        .work.section{
+            height: 200vh;
+            width: 100%;
+            background-size: 100% 200vh ;
+
+        }
+        .experience.section{
+            height: 200vh;
+            width: 100%;
+            background-size: 100% 200vh ;
+
+        }
+        .about.section{
+            height: 200vh;
+            width: 100%;
+            background-size: 100% 200vh ;
+
+        }
+        .contact.section{
+            height: 200vh;
+            width: 100%;
+            background-size: 100% 200vh ;
+
+
+        }
+    }
+}
+
+
