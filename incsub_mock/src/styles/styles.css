@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: url("/src/images/incsubbk.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+body #root {
+  min-height: 100vh;
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body #root .App {
+  min-height: 100vh;
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background: #286EFA;
+  height: 125vh;
+}
+
+body #root .App .form_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 125vh;
+  position: relative;
+  top: 0;
+  background-color: white;
+  width: 75%;
+  position: relative;
+}
+
+body #root .App .form_wrapper h1 {
+  -webkit-transform: translate(-3%, 5%);
+          transform: translate(-3%, 5%);
+  min-width: 40%;
+  font-size: 1.6rem;
+  text-align: left;
+  margin-top: -5rem;
+}
+
+body #root .App .form_wrapper .sign_in {
+  -webkit-transform: translate(-3%, 5%);
+          transform: translate(-3%, 5%);
+  width: 40%;
+  font-size: .8rem;
+  margin: 2.5rem 0px;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+body #root .App .form_wrapper .sign_in a {
+  font-weight: 600;
+  color: #286EFA;
+  margin-left: .5rem;
+  cursor: pointer;
+}
+
+body #root .App .form_wrapper .step_indicator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-transform: translate(-25%, 230%);
+          transform: translate(-25%, 230%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: .75rem;
+}
+
+body #root .App .form_wrapper .step_indicator h3 {
+  margin-right: .5rem;
+  font-size: .75rem;
+}
+
+body #root .App .form_wrapper .step_indicator .curstep {
+  background: #AAAAAA;
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+  margin: 0px 4px;
+}
+
+body #root .App .form_wrapper form {
+  -webkit-transform: translate(-3%, 5%);
+          transform: translate(-3%, 5%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 41%;
+}
+
+body #root .App .form_wrapper form p {
+  width: 100%;
+  text-align: left;
+  color: #AAAAAA;
+  font-size: .7rem;
+  font-weight: bold;
+  margin-top: -.5rem;
+  margin-bottom: 2rem;
+}
+
+body #root .App .form_wrapper form span {
+  width: 100%;
+  position: relative;
+}
+
+body #root .App .form_wrapper form span i {
+  font-size: .7rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(-75%, -100%);
+          transform: translate(-75%, -100%);
+  color: #AAAAAA;
+  cursor: pointer;
+}
+
+body #root .App .form_wrapper form span i:hover {
+  color: black;
+}
+
+body #root .App .form_wrapper form input, body #root .App .form_wrapper form select {
+  padding: .75rem;
+  width: 100% !important;
+  border: 1.5px solid #aaaaaa1a;
+  border-radius: .25rem;
+  margin-bottom: 1rem;
+  color: #A4A4A4;
+}
+
+body #root .App .form_wrapper form input::-webkit-input-placeholder, body #root .App .form_wrapper form select::-webkit-input-placeholder {
+  font-size: .8rem;
+  color: #A4A4A4;
+}
+
+body #root .App .form_wrapper form input:-ms-input-placeholder, body #root .App .form_wrapper form select:-ms-input-placeholder {
+  font-size: .8rem;
+  color: #A4A4A4;
+}
+
+body #root .App .form_wrapper form input::-ms-input-placeholder, body #root .App .form_wrapper form select::-ms-input-placeholder {
+  font-size: .8rem;
+  color: #A4A4A4;
+}
+
+body #root .App .form_wrapper form input::placeholder, body #root .App .form_wrapper form select::placeholder {
+  font-size: .8rem;
+  color: #A4A4A4;
+}
+
+body #root .App .form_wrapper form select {
+  cursor: pointer;
+}
+
+body #root .App .form_wrapper form .submit_button {
+  padding: 1rem;
+  background: rgba(150, 150, 150, 0.151);
+  border: none;
+  font-size: .75rem;
+  color: #AAAAAA;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+body #root .App .form_wrapper form .submit_button:hover {
+  background: rgba(150, 150, 150, 0.247);
+}
+
+body #root .App .lorem_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  width: 40%;
+  height: 100vh;
+  -webkit-transform: translate(0%, 14.5%);
+          transform: translate(0%, 14.5%);
+}
+
+body #root .App .lorem_wrapper h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+body #root .App .lorem_wrapper p {
+  width: 55%;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+/*# sourceMappingURL=styles.css.map */
