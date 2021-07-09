@@ -66,6 +66,7 @@ body{
         
             .form_wrapper{
                 @include flexCol();
+                justify-content: flex-start !important;
                 height: 125vh;
                 position: relative;
                 top: 0;
@@ -77,7 +78,7 @@ body{
                     min-width: 40%;
                     font-size: 1.6rem;
                     text-align: left;
-                    margin-top: -5rem;
+                    margin-top: 5rem;
                 }
                 .sign_in{
                     transform: translate(-3%,5%);
@@ -108,18 +109,23 @@ body{
                         font-size: .75rem;
                     }
                     .curstep{
-                        background: #AAAAAA;
-                        height: 3px;
-                        width: 3px;
+                        background: #c3c3c3;
+                        height: 4px;
+                        width: 4px;
                         border-radius: 50%;
                         margin: 0px 4px;
                         
+                    }
+                    .one{
+                        background: #505050;
                     }
                 }
                 form{
                     transform: translate(-3%,5%);
                     @include flexCol();
-                    width: 41%;
+                    max-width: 41%;
+                    min-width: 41%;
+                
                     p{
                         width: 100%;
                         text-align: left;
@@ -231,11 +237,29 @@ body{
                         border: none;
                         font-size: .75rem;
                         color: #AAAAAA;
-                        cursor: pointer;
                         font-weight: 600;
                         text-align: center;
                         &:hover{
                             background: rgba(150, 150, 150, 0.247) ;
+                        }
+                    }
+
+                    .terms{
+                        margin-top: 1.25rem;
+                        p{
+                            font-weight: normal;
+                            margin: 0px !important;
+                            width: auto;
+                            font-size: 1rem !important;
+                            color: black;
+                            line-height: 2;
+                            font-size: .89rem !important;
+                        }
+                        a{
+                            color: $backgroundblue;
+                            margin: 0px !important;
+                            cursor: pointer;
+    
                         }
                     }
                 }
@@ -261,3 +285,66 @@ body{
         }
     }
 }
+
+@media screen and (max-width: 992px) {
+    body {
+        #root{
+            .App{
+                @include flexCol();
+                flex-direction: column-reverse; 
+                .lorem_wrapper{
+                    width: 100%;
+                    height: auto;
+                    h1{
+                        margin-bottom: 2rem;
+                    }
+                    p{
+                        width: 90%;
+                        line-height: 1;
+                        margin-bottom: 4rem;
+                        text-align: center
+                    }
+                }
+
+                        
+            .form_wrapper{
+                @include flexCol();
+                position: relative;
+                top: 0;
+                background-color: white;
+                width: 90%;
+                position: relative;
+                h1{
+                    min-width: 100%;
+                    font-size: 1rem;
+                    text-align: center;
+                }
+                .sign_in{
+                    transform: translate(-3%,5%);
+                    width: 100%;
+                    font-size: .8rem;
+                    margin: 2.5rem 0px;
+                    margin-bottom: 1.5rem ;
+                    justify-content: center;
+                    a{
+                        font-weight: 600;
+                        color: $backgroundblue;
+                        margin-left: .5rem;
+                        cursor: pointer;
+
+                    }
+                }
+
+                form{
+                    margin-top: 1.5rem;
+                    transform: translate(0%,0%);
+                    max-width: 90%;
+                    min-width: 90%;
+                }
+
+            }
+            }
+        }
+    }
+  }
+  

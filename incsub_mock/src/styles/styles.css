@@ -82,6 +82,9 @@ body #root .App .form_wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
   height: 125vh;
   position: relative;
   top: 0;
@@ -96,7 +99,7 @@ body #root .App .form_wrapper h1 {
   min-width: 40%;
   font-size: 1.6rem;
   text-align: left;
-  margin-top: -5rem;
+  margin-top: 5rem;
 }
 
 body #root .App .form_wrapper .sign_in {
@@ -159,11 +162,15 @@ body #root .App .form_wrapper .step_indicator h3 {
 }
 
 body #root .App .form_wrapper .step_indicator .curstep {
-  background: #AAAAAA;
-  height: 3px;
-  width: 3px;
+  background: #c3c3c3;
+  height: 4px;
+  width: 4px;
   border-radius: 50%;
   margin: 0px 4px;
+}
+
+body #root .App .form_wrapper .step_indicator .one {
+  background: #505050;
 }
 
 body #root .App .form_wrapper form {
@@ -182,7 +189,8 @@ body #root .App .form_wrapper form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 41%;
+  max-width: 41%;
+  min-width: 41%;
 }
 
 body #root .App .form_wrapper form p {
@@ -322,13 +330,32 @@ body #root .App .form_wrapper form .submit_button {
   border: none;
   font-size: .75rem;
   color: #AAAAAA;
-  cursor: pointer;
   font-weight: 600;
   text-align: center;
 }
 
 body #root .App .form_wrapper form .submit_button:hover {
   background: rgba(150, 150, 150, 0.247);
+}
+
+body #root .App .form_wrapper form .terms {
+  margin-top: 1.25rem;
+}
+
+body #root .App .form_wrapper form .terms p {
+  font-weight: normal;
+  margin: 0px !important;
+  width: auto;
+  font-size: 1rem !important;
+  color: black;
+  line-height: 2;
+  font-size: .89rem !important;
+}
+
+body #root .App .form_wrapper form .terms a {
+  color: #286EFA;
+  margin: 0px !important;
+  cursor: pointer;
 }
 
 body #root .App .lorem_wrapper {
@@ -361,5 +388,86 @@ body #root .App .lorem_wrapper p {
   width: 55%;
   font-size: 1rem;
   line-height: 1.75;
+}
+
+@media screen and (max-width: 992px) {
+  body #root .App {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    flex-direction: column-reverse;
+  }
+  body #root .App .lorem_wrapper {
+    width: 100%;
+    height: auto;
+  }
+  body #root .App .lorem_wrapper h1 {
+    margin-bottom: 2rem;
+  }
+  body #root .App .lorem_wrapper p {
+    width: 90%;
+    line-height: 1;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  body #root .App .form_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    top: 0;
+    background-color: white;
+    width: 90%;
+    position: relative;
+  }
+  body #root .App .form_wrapper h1 {
+    min-width: 100%;
+    font-size: 1rem;
+    text-align: center;
+  }
+  body #root .App .form_wrapper .sign_in {
+    -webkit-transform: translate(-3%, 5%);
+            transform: translate(-3%, 5%);
+    width: 100%;
+    font-size: .8rem;
+    margin: 2.5rem 0px;
+    margin-bottom: 1.5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body #root .App .form_wrapper .sign_in a {
+    font-weight: 600;
+    color: #286EFA;
+    margin-left: .5rem;
+    cursor: pointer;
+  }
+  body #root .App .form_wrapper form {
+    margin-top: 1.5rem;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    max-width: 90%;
+    min-width: 90%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

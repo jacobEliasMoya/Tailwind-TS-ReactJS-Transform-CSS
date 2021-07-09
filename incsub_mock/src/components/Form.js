@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import Input from './Input';
 import Select from './Select';
 import Paragraph from './Paragraph';
+import Link from './Link';
 
 export default function Form() {
 
@@ -10,18 +11,26 @@ export default function Form() {
     const [fType,setFormType] = useState(undefined);
     const [fPassword,setFormPassword] = useState(undefined);
 
+    
+
     useEffect(()=>{
+        setSubmitBtn();
+    })
+
+    const setSubmitBtn = () => {
         if(fName && fEmail && fType && fPassword){
             document.querySelector('.submit_button').style.background='#286EFA';
             document.querySelector('.submit_button').style.color='white';
+            document.querySelector('.submit_button').style.cursor='pointer';
             document.querySelector('.submit_button').type='submit';
 
         } else  {
             document.querySelector('.submit_button').type='';
             document.querySelector('.submit_button').style.background='rgba(150, 150, 150, 0.151)';
+            document.querySelector('.submit_button').style.cursor='default';
             document.querySelector('.submit_button').style.color='#AAAAAA';
         }
-    })
+    }
 
     const onFormSubmit = (e) => {
         e.preventDefault();
@@ -105,6 +114,9 @@ export default function Form() {
             </span>
             <Paragraph paragraphText='Minimum 8 characters'/>
             <Input submitform={onFormSubmit} inputValue='Next' inputClass='submit_button' inputType=''/>
+            <span className='terms'>
+                <p>By Clicking the "Next" button, you agree to creating a free account, and to <Link linktext='Terms of Service'/> and <Link linktext='Privacy Policy.'/> </p>
+            </span>
         </form>
     )
 }
