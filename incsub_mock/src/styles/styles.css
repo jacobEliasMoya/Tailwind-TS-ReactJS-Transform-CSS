@@ -218,10 +218,11 @@ body #root .App .form_wrapper form span i:hover {
 body #root .App .form_wrapper form input, body #root .App .form_wrapper form select {
   padding: .75rem;
   width: 100% !important;
-  border: 1.5px solid #aaaaaa1a;
+  border: 1.5px solid #aaaaaa3b;
   border-radius: .25rem;
   margin-bottom: 1rem;
   color: #A4A4A4;
+  background-color: white;
 }
 
 body #root .App .form_wrapper form input::-webkit-input-placeholder, body #root .App .form_wrapper form select::-webkit-input-placeholder {
@@ -244,8 +245,75 @@ body #root .App .form_wrapper form input::placeholder, body #root .App .form_wra
   color: #A4A4A4;
 }
 
+body #root .App .form_wrapper form input:focus, body #root .App .form_wrapper form select:focus {
+  border: 1.5px solid #aaaaaa3b;
+}
+
 body #root .App .form_wrapper form select {
   cursor: pointer;
+}
+
+body #root .App .form_wrapper form .selectedSpanName {
+  position: relative;
+}
+
+body #root .App .form_wrapper form .selectedSpanName::after {
+  position: absolute;
+  content: 'Your name';
+  width: auto;
+  background: white;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate(22%, -50%);
+          transform: translate(22%, -50%);
+  font-size: .8rem;
+  color: #A4A4A4;
+}
+
+body #root .App .form_wrapper form .selectedSpanEmail {
+  position: relative;
+}
+
+body #root .App .form_wrapper form .selectedSpanEmail::after {
+  position: absolute;
+  content: 'Email address';
+  width: auto;
+  background: white;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate(17%, -50%);
+          transform: translate(17%, -50%);
+  font-size: .8rem;
+  color: #A4A4A4;
+}
+
+body #root .App .form_wrapper form .selectedSpanEmailErr {
+  position: relative;
+}
+
+body #root .App .form_wrapper form .selectedSpanEmailErr input {
+  border: 1.5px solid #ff3939 !important;
+}
+
+body #root .App .form_wrapper form .selectedSpanEmailErr::after {
+  position: absolute;
+  content: 'Email address';
+  width: auto;
+  background: white;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate(17%, -50%);
+          transform: translate(17%, -50%);
+  font-size: .8rem;
+  color: #ff3939 !important;
+}
+
+body #root .App .form_wrapper form .error_para {
+  margin-top: .25rem;
+  font-size: .75rem;
+  color: #ff3939;
+  margin-bottom: 1rem;
+  display: none;
 }
 
 body #root .App .form_wrapper form .submit_button {
@@ -256,6 +324,7 @@ body #root .App .form_wrapper form .submit_button {
   color: #AAAAAA;
   cursor: pointer;
   font-weight: 600;
+  text-align: center;
 }
 
 body #root .App .form_wrapper form .submit_button:hover {

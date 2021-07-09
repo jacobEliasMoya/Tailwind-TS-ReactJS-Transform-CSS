@@ -149,29 +149,93 @@ body{
                     input,select{
                         padding: .75rem;
                         width: 100% !important;
-                        border: 1.5px solid #aaaaaa1a;
+                        border: 1.5px solid #aaaaaa3b;
                         border-radius: .25rem; 
                         margin-bottom: 1rem;
                         color: #A4A4A4;
+                        background-color: white;
                         &::placeholder{
                             font-size: .8rem;
                             color: #A4A4A4;
 
                         }
+                        &:focus{
+                            border: 1.5px solid #aaaaaa3b;
+                        }
                     }
                     select{
                         cursor: pointer;
                     }
+
+                    .selectedSpanName{
+                        position: relative;
+                        &::after{
+                            position: absolute;
+                            content: 'Your name';
+                            width: auto;
+                            background: white;
+                            left: 0;
+                            top: 0;
+                            transform: translate(22%,-50%);
+                            font-size: .8rem;
+                            color: #A4A4A4;
+
+                        }
+                    }
+                    .selectedSpanEmail{
+                        position: relative;
+                        &::after{
+                            position: absolute;
+                            content: 'Email address';
+                            width: auto;
+                            background: white;
+                            left: 0;
+                            top: 0;
+                            transform: translate(17%,-50%);
+                            font-size: .8rem;
+                            color: #A4A4A4;
+
+                        }
+                    }
+
+                    .selectedSpanEmailErr{
+                        position: relative;
+                        input{
+                            border: 1.5px solid rgb(255, 57, 57) !important;
+
+                        }
+                        &::after{
+                            position: absolute;
+                            content: 'Email address';
+                            width: auto;
+                            background: white;
+                            left: 0;
+                            top: 0;
+                            transform: translate(17%,-50%);
+                            font-size: .8rem;
+                            color: rgb(255, 57, 57) !important;
+
+                        }
+                    }
+
+                    .error_para{
+                        margin-top: .25rem;
+                        font-size: .75rem;
+                        color: rgb(255, 57, 57);
+                        margin-bottom: 1rem;
+                        display: none;
+                    }
                     .submit_button{
                         padding: 1rem;
-                        background: rgba(150, 150, 150, 0.151);
+                        background: rgba(150, 150, 150, 0.151) ;
                         border: none;
                         font-size: .75rem;
                         color: #AAAAAA;
                         cursor: pointer;
                         font-weight: 600;
+                        text-align: center;
                         &:hover{
-                            background: rgba(150, 150, 150, 0.247);
+                            background: rgba(150, 150, 150, 0.247) ;
                         }
                     }
                 }
