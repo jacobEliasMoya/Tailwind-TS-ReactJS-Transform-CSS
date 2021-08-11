@@ -6,8 +6,7 @@ type IconProps = {
 
 const Icon:React.FC<IconProps> = ({faClass}) => {
     return(
-        <i className='fa fa-bars'>
-            {faClass}
+        <i className={faClass}>
         </i>
     )
 } 

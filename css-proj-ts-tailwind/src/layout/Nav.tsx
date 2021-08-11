@@ -4,7 +4,7 @@ import Icon from '../components/Icon';
 const Nav:React.FC = () => {
     return (
         <nav >
-            <Icon faClass='apple'/>
+            <Icon faClass='fa fa-bars'/>
             <h1>Transform Your Css</h1>
         </nav>
     );

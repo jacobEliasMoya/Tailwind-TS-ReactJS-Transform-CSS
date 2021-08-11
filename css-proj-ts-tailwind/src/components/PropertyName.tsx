@@ -1,8 +1,12 @@
 import React from "react";
 
-const PropertyName:React.FC = () =>{
+interface CSSPropName {
+    cssProperty:string
+}
+
+const PropertyName:React.FC<CSSPropName> = ({cssProperty}) =>{
     return(
-        <h1>CSS Property Name</h1>
+        <h1>{cssProperty}</h1>
     )
 }
 
