@@ -1,6 +1,6 @@
 import React from "react";
-import Icon from "./Icon";
-import PropertyName from "./PropertyName";
+import Icon from "../components/Icon";
+import PropertyName from "../components/PropertyName";
 
 const PropertyDisplay:React.FC=()=>{
     return (

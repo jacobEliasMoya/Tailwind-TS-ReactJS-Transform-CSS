@@ -1,5 +1,5 @@
 import React from "react";
-import PropertyDisplay from "../components/PropertyDisplay";
+import PropertyDisplay from "./PropertyDisplay";
 
 const ControlContainer: React.FC = () => {
     return (

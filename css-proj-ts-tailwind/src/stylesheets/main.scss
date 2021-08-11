@@ -1,0 +1,188 @@
+// DONT TOUCH
+@mixin flexCol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column ;
+}
+// DONT TOUCH
+@mixin flexRow {
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row ;
+}
+// DONT TOUCH
+@mixin fullScreener {
+    min-height: 100vh;
+    min-width: 100%;
+}
+// DONT TOUCH
+@mixin animationInfo{
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+// DONT TOUCH
+@mixin absCentered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: b
+}
+
+$darkerPurp :rgb(54, 0, 105);
+$darkPurp :rgb(88, 0, 170);
+$lightpurp :blueviolet;
+$lighterpurp :rgb(162, 77, 241);
+
+body{
+    #root{
+        .App{
+            @include flexRow();
+            justify-content: space-between;
+            @include fullScreener();
+            background-color: black;
+            color: white;
+            nav{
+                padding: 2rem 0rem;
+                @include flexCol();
+                justify-content: space-between;
+                width: 12rem;
+                background: blueviolet;
+                height: 100vh;
+                border-right: 3rem solid $darkPurp;
+                i{
+                    @include flexRow();
+                    font-size: 3rem;
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                    transition: all ease .25s;
+                    text-shadow: .75rem 0 0 $darkPurp;
+
+                    &:hover{
+                        cursor: pointer;
+                        background: $darkPurp;
+                    }
+                }
+                h1{
+                    font-size: 4rem;
+                    font-family: 'Palette Mosaic';
+                    transform: rotate(90deg) translate(-45%);
+                    text-align: center;
+                    width: max-content;
+                    margin-left: 1rem;
+                    text-shadow: 0 -1rem 0 $darkPurp;
+                }
+            }
+            .intro_menu{
+                @include flexRow();
+                width: 100%;
+                height: 100vh;
+                margin-left: 4rem;
+                div{
+                    .keyword{
+                        color:$lighterpurp;
+                    }
+                    height: inherit;
+                    @include flexCol();
+                    justify-content: space-evenly;
+                    width: 50%;
+                    h1{
+                        font-size: 4rem;
+                        font-weight: bold;
+                    }
+                    p{
+                        text-align: center;
+                        font-size: 2.25rem;
+                        font-weight: bold;
+                        width: 75%;
+                    }
+                    button{
+                        width: 75%;
+                        padding: .5rem 1rem;
+                        border: none;
+                        border-radius: 3rem;
+                        background: $darkPurp;
+                        font-size: 2.5rem;
+                        color: white;
+                        font-weight: bold;
+                        cursor: pointer;
+                        transition: all ease .25s;
+                        box-shadow: .75rem 0rem $darkerPurp;
+                        text-shadow: .5rem 0rem $darkerPurp;
+                        &:hover{
+                            background: $lightpurp;
+                            transform: rotateY(10deg);
+                            box-shadow: 1.25rem 0rem $darkerPurp;
+                            text-shadow: .7rem 0rem $darkerPurp;
+                        }
+                    }
+                }
+                .outer{
+                    justify-content: center;
+                    perspective: 100vh;
+                    padding-bottom: 5rem;
+                    .box{
+                        width: 17vw;
+                        height: 17vw;
+                        background: $lightpurp;
+                        box-shadow: 0 0 1rem black;
+                        margin:-7rem 0rem;
+                        transition: all ease .5s;
+                        animation: entryAnimation 7s linear infinite forwards;
+                        &:hover{
+                            background:$darkPurp;
+                            margin:-4rem 0rem;
+                        }
+                    }
+                    .one{
+                        z-index: 5;
+                        opacity: .8;
+                        animation-delay: 0s;
+                    }
+                    .two{
+                        z-index: 4;
+                        opacity: .7;
+                        animation-delay: .15s;
+
+                    }
+                    .three{
+                        z-index: 3;
+                        opacity: .6;
+                        animation-delay: .30s;
+
+                    }
+                    .four{
+                        z-index: 2;
+                        opacity: .5;
+                        animation-delay: .45s;
+
+                    }
+                    .five{
+                        z-index: 1;
+                        opacity: .4;
+                        animation-delay: .60s;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes entryAnimation {
+    0%{
+        transform: rotateX(45deg) rotateZ(0deg);
+    }
+    100%{
+        transform: rotateX(45deg) rotateZ(360deg);
+    }
+}

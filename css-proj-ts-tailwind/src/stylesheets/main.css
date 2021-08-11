@@ -1,1 +1,261 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: b;
+          box-sizing: b;
+}
+
+body #root .App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 100vh;
+  min-width: 100%;
+  background-color: black;
+  color: white;
+}
+
+body #root .App nav {
+  padding: 2rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 12rem;
+  background: blueviolet;
+  height: 100vh;
+  border-right: 3rem solid #5800aa;
+}
+
+body #root .App nav i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 3rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+  text-shadow: 0.75rem 0 0 #5800aa;
+}
+
+body #root .App nav i:hover {
+  cursor: pointer;
+  background: #5800aa;
+}
+
+body #root .App nav h1 {
+  font-size: 4rem;
+  font-family: 'Palette Mosaic';
+  -webkit-transform: rotate(90deg) translate(-45%);
+          transform: rotate(90deg) translate(-45%);
+  text-align: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: 1rem;
+  text-shadow: 0 -1rem 0 #5800aa;
+}
+
+body #root .App .intro_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  margin-left: 4rem;
+}
+
+body #root .App .intro_menu div {
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 50%;
+}
+
+body #root .App .intro_menu div .keyword {
+  color: #a24df1;
+}
+
+body #root .App .intro_menu div h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+body #root .App .intro_menu div p {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: bold;
+  width: 75%;
+}
+
+body #root .App .intro_menu div button {
+  width: 75%;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 3rem;
+  background: #5800aa;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+  -webkit-box-shadow: 0.75rem 0rem #360069;
+          box-shadow: 0.75rem 0rem #360069;
+  text-shadow: 0.5rem 0rem #360069;
+}
+
+body #root .App .intro_menu div button:hover {
+  background: blueviolet;
+  -webkit-transform: rotateY(10deg);
+          transform: rotateY(10deg);
+  -webkit-box-shadow: 1.25rem 0rem #360069;
+          box-shadow: 1.25rem 0rem #360069;
+  text-shadow: 0.7rem 0rem #360069;
+}
+
+body #root .App .intro_menu .outer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-perspective: 100vh;
+          perspective: 100vh;
+  padding-bottom: 5rem;
+}
+
+body #root .App .intro_menu .outer .box {
+  width: 17vw;
+  height: 17vw;
+  background: blueviolet;
+  -webkit-box-shadow: 0 0 1rem black;
+          box-shadow: 0 0 1rem black;
+  margin: -7rem 0rem;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  -webkit-animation: entryAnimation 7s linear infinite forwards;
+          animation: entryAnimation 7s linear infinite forwards;
+}
+
+body #root .App .intro_menu .outer .box:hover {
+  background: #5800aa;
+  margin: -4rem 0rem;
+}
+
+body #root .App .intro_menu .outer .one {
+  z-index: 5;
+  opacity: .8;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+body #root .App .intro_menu .outer .two {
+  z-index: 4;
+  opacity: .7;
+  -webkit-animation-delay: .15s;
+          animation-delay: .15s;
+}
+
+body #root .App .intro_menu .outer .three {
+  z-index: 3;
+  opacity: .6;
+  -webkit-animation-delay: .30s;
+          animation-delay: .30s;
+}
+
+body #root .App .intro_menu .outer .four {
+  z-index: 2;
+  opacity: .5;
+  -webkit-animation-delay: .45s;
+          animation-delay: .45s;
+}
+
+body #root .App .intro_menu .outer .five {
+  z-index: 1;
+  opacity: .4;
+  -webkit-animation-delay: .60s;
+          animation-delay: .60s;
+}
+
+@-webkit-keyframes entryAnimation {
+  0% {
+    -webkit-transform: rotateX(45deg) rotateZ(0deg);
+            transform: rotateX(45deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(45deg) rotateZ(360deg);
+            transform: rotateX(45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes entryAnimation {
+  0% {
+    -webkit-transform: rotateX(45deg) rotateZ(0deg);
+            transform: rotateX(45deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(45deg) rotateZ(360deg);
+            transform: rotateX(45deg) rotateZ(360deg);
+  }
+}
+/*# sourceMappingURL=main.css.map */
