@@ -7,7 +7,7 @@ import { useAppSelector } from './app/hooks';
 
 const App:React.FC = () => {
 
-  const stateBool = useAppSelector((state)=>state.appStart)
+  const stateBool = useAppSelector((state)=>state.appStart.appOn)
 
   return (
     <div className="App">

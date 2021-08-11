@@ -1,8 +1,12 @@
 import React from "react";
 
-const Button:React.FC = () => {
+interface OnClicker {
+    onclick:any
+}
+
+const Button:React.FC<OnClicker> = ({onclick}) => {
     return(
-        <button>button</button>
+        <button onClick={onclick}>button</button>
     )
 };
 

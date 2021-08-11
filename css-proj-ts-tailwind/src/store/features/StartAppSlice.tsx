@@ -2,13 +2,14 @@ import {createSlice} from '@reduxjs/toolkit';
 
 export const appInitializer = createSlice({
     name:'appInitialize',
-    initialState : false,
+    initialState : {
+        appOn : false
+    },
     reducers:{
         beginApp : (state) =>{
-            state=true;
+            state.appOn = !state.appOn
         }
     }
-
 })
 
 export const {beginApp} = appInitializer.actions;
