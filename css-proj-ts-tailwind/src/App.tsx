@@ -4,7 +4,6 @@ import Nav from './layout/Nav';
 import IntroMenu from './layout/IntroMenu';
 import { useAppSelector } from './app/hooks';
 
-
 const App:React.FC = () => {
 
   const stateBool = useAppSelector((state)=>state.appStart.appOn)
@@ -12,9 +11,10 @@ const App:React.FC = () => {
   return (
     <div className="App">
       <Nav/>
-      {!stateBool?<IntroMenu/>:<MainContainer/>}
+      {stateBool?<IntroMenu/>:<MainContainer/>}
     </div>
   );
+  
 }
 
 export default App;

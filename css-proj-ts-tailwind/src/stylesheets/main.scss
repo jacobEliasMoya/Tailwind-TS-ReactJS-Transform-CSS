@@ -70,6 +70,7 @@ body{
                     &:hover{
                         cursor: pointer;
                         background: $darkPurp;
+                        transform: rotate(90deg);
                     }
                 }
                 h1{
@@ -174,9 +175,70 @@ body{
                     }
                 }
             }
+            .outer-container {
+                width: 100%;
+                height: 100vh;
+                @include flexRow();
+                main{
+                    height: inherit;
+                    width: inherit;
+                    .property_display{
+                        height: inherit;
+                        width: inherit;
+                        @include flexCol();
+                        justify-content: space-evenly;
+                        .property_name{
+                            @include flexRow();
+                            width: 100%;
+                            justify-content: space-evenly;
+                            i{
+                                font-size: 3rem;
+                            }
+                            h1{
+                                font-size: 4rem;
+                                font-family: 'Palette Mosaic';
+                            }
+                        }
+                        .main_slider_container{
+                            width: 60%;
+                            background-color: $lightpurp;
+                            border-radius: 3rem;
+                            border-right: 1rem solid $darkPurp;
+                            padding: 2rem;
+                        }
+                    }
+                    .slider_container{
+                        @include flexRow();
+                        justify-content: space-evenly;
+                        .rangeSlider{
+                            width: 75%;
+                            background: $lightpurp;
+                            &::-webkit-slider-runnable-track {
+                                background-color: $darkerPurp;
+                                border-radius: 2rem;
+                                transition: all ease .25s;
+                                &:hover{
+                                    background-color: $darkPurp;
+                                }
+
+                            }
+                            &::-webkit-slider-thumb{
+                                padding: 1rem;
+                                cursor: pointer;
+                                background: blue !important;
+
+                            }
+                        }
+                        
+                    }
+                }
+            }
         }
     }
 }
+
+
+
 
 @keyframes entryAnimation {
     0%{

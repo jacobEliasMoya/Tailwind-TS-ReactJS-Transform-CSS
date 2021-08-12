@@ -78,6 +78,8 @@ body #root .App nav i {
 body #root .App nav i:hover {
   cursor: pointer;
   background: #5800aa;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 body #root .App nav h1 {
@@ -235,6 +237,128 @@ body #root .App .intro_menu .outer .five {
   opacity: .4;
   -webkit-animation-delay: .60s;
           animation-delay: .60s;
+}
+
+body #root .App .outer-container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body #root .App .outer-container main {
+  height: inherit;
+  width: inherit;
+}
+
+body #root .App .outer-container main .property_display {
+  height: inherit;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body #root .App .outer-container main .property_display .property_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body #root .App .outer-container main .property_display .property_name i {
+  font-size: 3rem;
+}
+
+body #root .App .outer-container main .property_display .property_name h1 {
+  font-size: 4rem;
+  font-family: 'Palette Mosaic';
+}
+
+body #root .App .outer-container main .property_display .main_slider_container {
+  width: 60%;
+  background-color: blueviolet;
+  border-radius: 3rem;
+  border-right: 1rem solid #5800aa;
+  padding: 2rem;
+}
+
+body #root .App .outer-container main .slider_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body #root .App .outer-container main .slider_container .rangeSlider {
+  width: 75%;
+  background: blueviolet;
+}
+
+body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-runnable-track {
+  background-color: #360069;
+  border-radius: 2rem;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+}
+
+body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-runnable-track:hover {
+  background-color: #5800aa;
+}
+
+body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-thumb {
+  padding: 1rem;
+  cursor: pointer;
+  background: blue !important;
 }
 
 @-webkit-keyframes entryAnimation {
