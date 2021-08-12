@@ -10,7 +10,7 @@ const SliderContainer:React.FC = () =>{
 
     return(
         <div className='slider_container'>
-            <PropertyName cssProperty='width'/>
+            <PropertyName cssProperty='Width:'/>
             <Sliders changelistener={handleChange}/>
         </div>
     )
