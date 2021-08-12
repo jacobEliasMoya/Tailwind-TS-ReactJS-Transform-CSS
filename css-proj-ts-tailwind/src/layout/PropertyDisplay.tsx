@@ -2,7 +2,6 @@ import React from "react";
 import Icon from "../components/Icon";
 import PropertyName from "../components/PropertyName";
 import SliderContainer from "./SliderContainer";
-
 const PropertyDisplay:React.FC=()=>{
     return (
         <div className='property_display'>
@@ -13,7 +12,7 @@ const PropertyDisplay:React.FC=()=>{
             </div>
             <div className='main_slider_container'>
                 <SliderContainer/>
-                <SliderContainer/>
+
             </div>
         </div>
     )

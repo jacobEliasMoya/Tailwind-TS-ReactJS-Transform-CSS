@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "Width",
+        "properties": ["Width"]
+    },    
+    {
+        "id": 2,
+        "name": "Height",
+        "properties": ["Height"]
+    }
+]

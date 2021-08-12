@@ -7,7 +7,7 @@ const OutputDisplayer :React.FC =()=>{
             <div className="screen"></div>
             <div className="button_container">
                 <Button buttonText='View Code' onclick={null}/>
-                <Button buttonText='Apply Code' onclick={null}/>
+                <Button buttonText='Copy Code' onclick={null}/>
             </div>
         </div>
     )

@@ -1,11 +1,27 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import MainContainer from './layout/MainContainer';
 import Nav from './layout/Nav';
 import IntroMenu from './layout/IntroMenu';
-import { useAppSelector } from './app/hooks';
+import { useAppDispatch, useAppSelector } from './app/hooks';
+import { importData } from './store/features/ImportCssSlice';
 
 const App:React.FC = () => {
-  const stateBool = useAppSelector((state)=>state.appStart.appOn)
+
+  const dispatch = useAppDispatch();
+  const stateBool = useAppSelector((state)=>state.appStart.appOn);
+  const jsonCSSPath = '/cssProperties.json';
+  const cssPropFectch = async (path:string) => {
+    await fetch(path).then(result=>result.json()).then(data=>dispatch(importData(data)));
+    
+  };
+
+
+
+  useEffect(() => {
+    if(stateBool){
+      cssPropFectch(jsonCSSPath);
+    }
+  }, [stateBool])
 
   return (
     <div className="App">
