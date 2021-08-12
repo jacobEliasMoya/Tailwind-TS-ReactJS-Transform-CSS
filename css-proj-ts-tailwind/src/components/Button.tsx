@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from "react";
 
 interface OnClicker {
-    onclick: MouseEventHandler<HTMLButtonElement>,
+    onclick: any,
     buttonText:string
 }
 
