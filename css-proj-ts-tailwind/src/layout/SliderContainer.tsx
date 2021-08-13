@@ -18,7 +18,15 @@ const SliderContainer:React.FC<SliderInfo> = ({name}) =>{
     return(
         <div className='slider_container'>
             <PropertyName cssProperty={name}/>
-            {sliderVal}
+            <h1 className='slider_value'>{sliderVal}</h1>
+            <select name="" id="">
+                <option value="px">PX</option>
+                <option value="em">EM</option>
+                <option value="rem">REM</option>
+                <option value="vw">VW</option>
+                <option value="vh">VH</option>
+                <option value="percent">%</option>
+            </select>
             <Sliders changelistener={displayPropertyValue}/>
         </div>
     )

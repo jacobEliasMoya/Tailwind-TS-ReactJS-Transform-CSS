@@ -5,6 +5,7 @@ import IntroMenu from './layout/IntroMenu';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { importData } from './store/features/ImportCssSlice';
 import {CssJsonInt} from './store/features/ImportCssSlice';
+
 const App:React.FC = () => {
 
   const dispatch = useAppDispatch();
@@ -20,10 +21,12 @@ const App:React.FC = () => {
     });
   };
 
+  const nullRet = () =>{
+    return;
+  }
+
   useEffect(() => {
-    if(stateBool){
-      cssPropFectch(jsonCSSPath);
-    }
+    stateBool ? cssPropFectch(jsonCSSPath):nullRet();
   }, [stateBool])
 
   return (

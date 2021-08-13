@@ -242,7 +242,7 @@ body{
                         @include flexRow();
                         justify-content: space-between;
                         .rangeSlider{
-                            width: 65%;
+                            width: 40%;
                             -webkit-appearance: none !important;
                             background: $lightpurp;
                             &::-webkit-slider-runnable-track {
@@ -251,7 +251,6 @@ body{
                                 border-radius: 2rem;
                                 transition: all ease .25s;
                                 height: 1rem;
-
                             }
                             &::-webkit-slider-thumb{
                                 -webkit-appearance: none !important;
@@ -267,9 +266,14 @@ body{
                                     padding: 1.5rem;
                                     transform: translate(0%,-40%);
                                 }
+                                &:active{
+                                    background: $lighterpurp;
+                                    padding: 1.75rem;
+
+                                }
                             }
                         }
-                        h1{
+                        h1,select{
                             transition: all ease .25s;
                             width: 30%;
                             transform: translate(0%,-15%);
@@ -281,11 +285,27 @@ body{
                             border-radius: 2rem;
                             text-align: center;
                         }
+                        .slider_value{
+                            width: 10%;
+                            margin: 0rem 1rem;
+                        }
+                        select{
+                            color: white;
+                            width: auto;
+                            border: none;
+                            border-right: .4rem solid $darkerPurp;
+                            margin-right: 1rem;
+                            cursor: pointer;
+                            option{
+                                font-weight: bolder;
+                            }
+                        }
                         &:hover{
-                            h1{
+                            h1,select{
                                 background-color: $lighterpurp;
                                 box-shadow: .75rem 0 1rem $darkerPurp;
                                 transform: translate(-2.5%);
+
                             }
                             .rangeSlider{
                                 &::-webkit-slider-runnable-track {
@@ -329,11 +349,9 @@ body{
                                 cursor: pointer;
                                 transition: all ease .25s;
                                 border-right: .5rem solid $darkerPurp;
-                                text-shadow: .25rem 0rem $darkerPurp;
                                 &:hover{
                                     transform: rotateY(10deg);
                                     background: $lighterpurp;
-                                    text-shadow: .5rem 0rem $darkerPurp;
                                     border-right: .6rem solid $darkerPurp;  
                                     box-shadow: .5rem 0 1rem $darkerPurp;
                                     transform: translate(-2.5%);

@@ -6,7 +6,7 @@ interface ChangeEvent {
 
 const Sliders:React.FC<ChangeEvent> = ({changelistener}) => {
     return(
-        <input onChange={changelistener} type="range" min='1' max='50' className='rangeSlider'/>
+        <input onChange={changelistener} type="range" min='1' max='100' className='rangeSlider'/>
     );
 }
 
