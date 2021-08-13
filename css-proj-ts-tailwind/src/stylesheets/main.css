@@ -399,13 +399,13 @@ body #root .App .outer-container main .slider_container {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body #root .App .outer-container main .slider_container .rangeSlider {
-  width: 75%;
+  width: 65%;
   -webkit-appearance: none !important;
   background: blueviolet;
 }
@@ -417,10 +417,6 @@ body #root .App .outer-container main .slider_container .rangeSlider::-webkit-sl
   -webkit-transition: all ease .25s;
   transition: all ease .25s;
   height: 1rem;
-}
-
-body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-runnable-track:hover {
-  background-color: #5800aa;
 }
 
 body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-thumb {
@@ -444,9 +440,30 @@ body #root .App .outer-container main .slider_container .rangeSlider::-webkit-sl
 }
 
 body #root .App .outer-container main .slider_container h1 {
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+  width: 30%;
   -webkit-transform: translate(0%, -15%);
           transform: translate(0%, -15%);
-  margin-right: 1rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  background-color: #5800aa;
+  border-right: 0.4rem solid #360069;
+  padding: .5rem .5rem;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+body #root .App .outer-container main .slider_container:hover h1 {
+  background-color: #a24df1;
+  -webkit-box-shadow: 0.75rem 0 1rem #360069;
+          box-shadow: 0.75rem 0 1rem #360069;
+  -webkit-transform: translate(-2.5%);
+          transform: translate(-2.5%);
+}
+
+body #root .App .outer-container main .slider_container:hover .rangeSlider::-webkit-slider-runnable-track {
+  background-color: #5800aa;
 }
 
 body #root .App .outer-container .display-container .output_displayer {
@@ -503,29 +520,31 @@ body #root .App .outer-container .display-container .output_displayer .button_co
 }
 
 body #root .App .outer-container .display-container .output_displayer .button_container button {
-  width: 40%;
-  padding: 1rem 1rem;
+  width: 45%;
+  padding: 1rem 0rem;
   border: none;
   border-radius: 1rem;
   background: #5800aa;
   color: white;
-  font-weight: bold;
-  font-size: 1.25rem;
+  font-weight: bolder;
+  font-size: 1.75rem;
   cursor: pointer;
   -webkit-transition: all ease .25s;
   transition: all ease .25s;
-  -webkit-box-shadow: 0.75rem 0rem #360069;
-          box-shadow: 0.75rem 0rem #360069;
+  border-right: 0.5rem solid #360069;
   text-shadow: 0.25rem 0rem #360069;
 }
 
 body #root .App .outer-container .display-container .output_displayer .button_container button:hover {
   -webkit-transform: rotateY(10deg);
           transform: rotateY(10deg);
-  -webkit-box-shadow: 0.9rem 0rem #360069;
-          box-shadow: 0.9rem 0rem #360069;
   background: #a24df1;
   text-shadow: 0.5rem 0rem #360069;
+  border-right: 0.6rem solid #360069;
+  -webkit-box-shadow: 0.5rem 0 1rem #360069;
+          box-shadow: 0.5rem 0 1rem #360069;
+  -webkit-transform: translate(-2.5%);
+          transform: translate(-2.5%);
 }
 
 @-webkit-keyframes entryAnimation {
