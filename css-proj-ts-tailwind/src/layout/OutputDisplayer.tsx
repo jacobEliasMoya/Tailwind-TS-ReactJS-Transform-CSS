@@ -4,14 +4,10 @@ import DisplayDiv from "../components/DisplayDiv";
 
 const OutputDisplayer :React.FC =()=>{
 
-    const styles= {
-        borderRadius:'1rem'
-    }
-
     return(
         <div className='output_displayer' >
             <div className="screen">
-                <DisplayDiv stylings={styles} />
+                <DisplayDiv />
             </div>
             <div className="button_container">
                 <Button buttonText='View Code' onclick={null}/>
