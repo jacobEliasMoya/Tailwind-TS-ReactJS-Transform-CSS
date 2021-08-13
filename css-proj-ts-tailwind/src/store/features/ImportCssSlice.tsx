@@ -1,9 +1,9 @@
 import { createSlice,current,PayloadAction } from "@reduxjs/toolkit";
 
-interface CssJsonInt {
-    id:string,
-    name:never,
-    properties:Array<string>
+export interface CssJsonInt {
+    id: any,
+    name:string,
+    properties:string[]
 }
 
 const initialState:Array<CssJsonInt> = [];
@@ -16,7 +16,6 @@ export const obtainCssProperties = createSlice({
             state.push(action.payload);
         }
     }
-
 })
 
 export const {importData} = obtainCssProperties.actions;

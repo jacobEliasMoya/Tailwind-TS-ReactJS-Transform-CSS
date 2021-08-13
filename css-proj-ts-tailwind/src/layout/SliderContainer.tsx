@@ -1,22 +1,17 @@
 import React from "react";
 import Sliders from "../components/Sliders";
 import PropertyName from "../components/PropertyName";
-import { useAppSelector } from "../app/hooks";
 
-const SliderContainer:React.FC = () =>{
+interface SliderInfo {
+    name : string,
+}
 
-    const cssProps = useAppSelector((state)=>state.cssImp);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        cssProps.forEach(option=>{
-            console.log(option)
-        })
-    }
+const SliderContainer:React.FC<SliderInfo> = ({name}) =>{
 
     return(
         <div className='slider_container'>
-            <PropertyName cssProperty='asdx'/>
-            <Sliders changelistener={handleChange}/>
+            <PropertyName cssProperty={name}/>
+            <Sliders changelistener={null}/>
         </div>
     )
 }

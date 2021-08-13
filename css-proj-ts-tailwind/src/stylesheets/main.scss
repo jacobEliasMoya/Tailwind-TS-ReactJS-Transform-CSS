@@ -138,7 +138,8 @@ body{
                         box-shadow: 0 0 1rem black;
                         margin:-7rem 0rem;
                         transition: all ease .5s;
-                        animation: entryAnimation 7s linear infinite forwards;
+                        transform: rotateX(45deg) rotateZ(0deg);
+                        animation: entryAnimation 4s linear infinite forwards;
                         &:hover{
                             background:$darkPurp;
                             margin:-4rem 0rem;
@@ -199,7 +200,7 @@ body{
                                 width: 5rem;
                                 height: 5rem;
                                 border-radius: 50%;
-                                box-shadow: .25rem 0rem $darkPurp;
+                                box-shadow: .5rem 0rem $darkPurp;
                                 transition: all ease .5s;
                                 cursor: pointer;
                                 &:hover{
@@ -225,12 +226,12 @@ body{
                             }
 
                             h1{
-                                font-size: 4rem;
+                                font-size: 5rem;
                                 font-family: 'Palette Mosaic';
                             }
                         }
                         .main_slider_container{
-                            width: 60%;
+                            width: 80%;
                             background-color: $lightpurp;
                             border-radius: 3rem;
                             border-right: 1rem solid $darkPurp;

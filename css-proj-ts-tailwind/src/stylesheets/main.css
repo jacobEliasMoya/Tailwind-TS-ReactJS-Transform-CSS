@@ -195,8 +195,10 @@ body #root .App .intro_menu .outer .box {
   margin: -7rem 0rem;
   -webkit-transition: all ease .5s;
   transition: all ease .5s;
-  -webkit-animation: entryAnimation 7s linear infinite forwards;
-          animation: entryAnimation 7s linear infinite forwards;
+  -webkit-transform: rotateX(45deg) rotateZ(0deg);
+          transform: rotateX(45deg) rotateZ(0deg);
+  -webkit-animation: entryAnimation 4s linear infinite forwards;
+          animation: entryAnimation 4s linear infinite forwards;
 }
 
 body #root .App .intro_menu .outer .box:hover {
@@ -335,8 +337,8 @@ body #root .App .outer-container main .property_display .property_name i {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  -webkit-box-shadow: 0.25rem 0rem #5800aa;
-          box-shadow: 0.25rem 0rem #5800aa;
+  -webkit-box-shadow: 0.5rem 0rem #5800aa;
+          box-shadow: 0.5rem 0rem #5800aa;
   -webkit-transition: all ease .5s;
   transition: all ease .5s;
   cursor: pointer;
@@ -371,12 +373,12 @@ body #root .App .outer-container main .property_display .property_name .fa-forwa
 }
 
 body #root .App .outer-container main .property_display .property_name h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-family: 'Palette Mosaic';
 }
 
 body #root .App .outer-container main .property_display .main_slider_container {
-  width: 60%;
+  width: 80%;
   background-color: blueviolet;
   border-radius: 3rem;
   border-right: 1rem solid #5800aa;
