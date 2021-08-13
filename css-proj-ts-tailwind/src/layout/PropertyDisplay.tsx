@@ -6,10 +6,12 @@ import { useAppSelector } from "../app/hooks";
 
 const PropertyDisplay:React.FC=()=>{
 
+    let key=0;
+
     const cssProps = useAppSelector((state)=>state.cssImp);
 
     const returnSliderCont = (item:string) => {
-        return (<SliderContainer name={`${item}`}/>)
+        return (<SliderContainer key={key+=1} name={`${item}`}/>)
     }
 
     return (
