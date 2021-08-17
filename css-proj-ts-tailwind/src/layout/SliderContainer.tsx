@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Sliders from "../components/Sliders";
 import PropertyName from "../components/PropertyName";
+import {getCssStyle} from '../store/features/CssStyleSlice';
+import {useAppDispatch,useAppSelector} from '../app/hooks';
 
 interface SliderInfo {
     name : string,
@@ -8,7 +10,10 @@ interface SliderInfo {
 
 const SliderContainer:React.FC<SliderInfo> = ({name}) =>{
 
-    const [cssPropAndValue, setCssPropAndVal] = useState('');
+
+    const dispatch = useAppDispatch();
+    const cssStyle =  useAppSelector(state=>state.styleImp);
+    
     const [sliderVal,setSliderVal] = useState(0); 
     const [valueOperator,setValueOperator] = useState('px'); 
     
@@ -21,9 +26,10 @@ const SliderContainer:React.FC<SliderInfo> = ({name}) =>{
     }
 
     const obtainStyleString = () => {
-        setCssPropAndVal(`${name}:${sliderVal}${valueOperator}`)
+        dispatch(getCssStyle(`${name}:${sliderVal}${valueOperator}`));
+        console.log(cssStyle)
     }
-
+                 
     return(
         <div onChange={obtainStyleString} className='slider_container'>
             <PropertyName cssProperty={name}/>

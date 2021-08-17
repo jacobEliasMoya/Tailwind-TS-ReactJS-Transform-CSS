@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import appReducer from './features/StartAppSlice';
 import cssReducer from './features/ImportCssSlice';
+import cssStyleReducer from './features/CssStyleSlice'
 
 const store = configureStore({
     reducer: {
         appStart : appReducer,
-        cssImp : cssReducer
+        cssImp : cssReducer,
+        styleImp : cssStyleReducer
     }
 })
 
