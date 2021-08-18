@@ -228,6 +228,7 @@ body{
                             h1{
                                 font-size: 5rem;
                                 font-family: 'Palette Mosaic';
+                                text-align: center;
                             }
                         }
                         .main_slider_container{
@@ -239,7 +240,11 @@ body{
                         }
                     }
                     .slider_container{
+                        @include flexCol();
+                        span{
                         @include flexRow();
+                        width: 100%;
+                        }
                         justify-content: space-between;
                         .rangeSlider{
                             width: 40%;
@@ -304,11 +309,32 @@ body{
                                 background: $darkPurp;
                             }
                         }
+                        button{
+                            width: 100%;
+                            padding: 1rem 0rem;
+                            border: none;
+                            border-radius: 1rem;
+                            background: $darkPurp;
+                            color: white;
+                            font-weight: bolder;
+                            font-size: 1.75rem;
+                            cursor: pointer;
+                            transition: all ease .25s;
+                            border-right: .5rem solid $darkerPurp;
+                            margin-bottom: 1rem;
+                            &:hover{
+                                transform: rotateY(10deg);
+                                background: $lighterpurp;
+                                border-right: .6rem solid $darkerPurp;  
+                                box-shadow: .5rem 0 1rem $darkerPurp;
+                                transform: translate(-2.5%);
+                            }
+                        }
+
                         &:hover{
-                            h1,select{
+                            select{
                                 background-color: $lighterpurp;
                                 box-shadow: .75rem 0 1rem $darkerPurp;
-                                transform: translate(-2.5%);
 
                             }
                             .rangeSlider{

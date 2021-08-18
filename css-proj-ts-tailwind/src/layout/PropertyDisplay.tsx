@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Icon from "../components/Icon";
 import PropertyName from "../components/PropertyName";
 import SliderContainer from "./SliderContainer";
@@ -6,23 +6,45 @@ import { useAppSelector } from "../app/hooks";
 
 const PropertyDisplay:React.FC=()=>{
 
-    let key=0;
-
     const cssProps = useAppSelector((state)=>state.cssImp);
 
-    const returnSliderCont = (item:string) => {
-        return (<SliderContainer key={key+=1} name={`${item}`}/>)
+    let key=0;
+
+    let key2=cssProps.length;
+
+    const [displayCssPropKey, setNewPropKey] = useState(0);
+
+    const incrementKey = () => {
+        setNewPropKey(prevkey=> prevkey+1);
     }
+
+    const decrementKey = () => {
+        if(displayCssPropKey>0){
+            setNewPropKey(prevkey=> prevkey-1);
+        }
+    }
+
+    useEffect(()=>{
+        console.log(displayCssPropKey);
+    },[displayCssPropKey])
 
     return (
         <div className='property_display'>
             <div className="property_name">
-                <Icon faClass='fa fa-backward'/>
-                <PropertyName cssProperty='Property'/>
-                <Icon faClass='fa fa-forward'/>
+                <Icon onclick={decrementKey} faClass='fa fa-backward'/>
+                {cssProps.map(item=>{
+                    if(cssProps.indexOf(item) === displayCssPropKey){
+                        return <PropertyName key={key2+=1} cssProperty={`${item.name} Property`}/>
+                    }
+                })}
+                <Icon onclick={incrementKey} faClass='fa fa-forward'/>
             </div>
             <div className='main_slider_container'>
-                {cssProps.map(item=>returnSliderCont(item.name))}
+                {cssProps.map(item=>{
+                    if(cssProps.indexOf(item) === displayCssPropKey){
+                        return <SliderContainer key={key+=1} name={`${item.name}`}/>
+                    }
+                })}
             </div>
         </div>
     )

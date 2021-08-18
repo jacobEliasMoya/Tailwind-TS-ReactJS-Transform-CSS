@@ -375,6 +375,7 @@ body #root .App .outer-container main .property_display .property_name .fa-forwa
 body #root .App .outer-container main .property_display .property_name h1 {
   font-size: 5rem;
   font-family: 'Palette Mosaic';
+  text-align: center;
 }
 
 body #root .App .outer-container main .property_display .main_slider_container {
@@ -395,13 +396,30 @@ body #root .App .outer-container main .slider_container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body #root .App .outer-container main .slider_container span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 100%;
 }
 
 body #root .App .outer-container main .slider_container .rangeSlider {
@@ -482,12 +500,37 @@ body #root .App .outer-container main .slider_container select:hover {
   background: #5800aa;
 }
 
-body #root .App .outer-container main .slider_container:hover h1, body #root .App .outer-container main .slider_container:hover select {
+body #root .App .outer-container main .slider_container button {
+  width: 100%;
+  padding: 1rem 0rem;
+  border: none;
+  border-radius: 1rem;
+  background: #5800aa;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.75rem;
+  cursor: pointer;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+  border-right: 0.5rem solid #360069;
+  margin-bottom: 1rem;
+}
+
+body #root .App .outer-container main .slider_container button:hover {
+  -webkit-transform: rotateY(10deg);
+          transform: rotateY(10deg);
+  background: #a24df1;
+  border-right: 0.6rem solid #360069;
+  -webkit-box-shadow: 0.5rem 0 1rem #360069;
+          box-shadow: 0.5rem 0 1rem #360069;
+  -webkit-transform: translate(-2.5%);
+          transform: translate(-2.5%);
+}
+
+body #root .App .outer-container main .slider_container:hover select {
   background-color: #a24df1;
   -webkit-box-shadow: 0.75rem 0 1rem #360069;
           box-shadow: 0.75rem 0 1rem #360069;
-  -webkit-transform: translate(-2.5%);
-          transform: translate(-2.5%);
 }
 
 body #root .App .outer-container main .slider_container:hover .rangeSlider::-webkit-slider-runnable-track {

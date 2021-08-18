@@ -1,4 +1,4 @@
-import { bindActionCreators, createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 
 const initialState:Array<string> = [];
@@ -8,7 +8,17 @@ export const cssStyleSlice = createSlice({
     initialState,
     reducers:{
         getCssStyle : (state,action:PayloadAction<string>)=>{
-            return state.filter(item=>item !== action.payload);
+
+            if(state.length<1){
+                state.push(action.payload);
+            } 
+            
+            if(state.includes(action.payload)){
+            } else {
+                state.push(action.payload);
+            }
+
+            console.log(current(state));
         }
     }
 }) 
