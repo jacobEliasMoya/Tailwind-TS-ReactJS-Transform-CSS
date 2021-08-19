@@ -2,21 +2,25 @@ import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
 import DisplayDiv from "../components/DisplayDiv";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { createEmptyStatement } from "typescript";
 
 const OutputDisplayer :React.FC =()=>{
+
+    const cssStyle = useAppSelector(state=>state.styleImp);
 
     const initialArr:Array<string> = [];
 
     const [styleArr,setStyleArr] = useState(initialArr);
 
-    const cssStyle = useAppSelector(state=>state.styleImp);
+    useEffect(()=>{
+        if(cssStyle[0]){
+            setStyleArr(prevarr=>[...prevarr,cssStyle[0]])
+        }
+    },[cssStyle])
 
     useEffect(()=>{
-        setTimeout(() => {
-            setStyleArr(oldArr=>[...oldArr,cssStyle[0]]);
-            console.log(styleArr)
-        }, 100);
-    },[cssStyle])
+        console.log(styleArr);
+    },[styleArr])
 
     return(
         <div className='output_displayer' >

@@ -9,7 +9,6 @@ export const cssStyleSlice = createSlice({
     reducers:{
         getCssStyle : (state,action:PayloadAction<string>)=>{
             state.splice(0,1,action.payload);
-            console.log(current(state));
         }
     }
 }) 
