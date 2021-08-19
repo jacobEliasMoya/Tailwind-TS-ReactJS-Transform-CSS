@@ -187,8 +187,9 @@ body{
                     .property_display{
                         height: inherit;
                         width: inherit;
+                        height: 70vh;
                         @include flexCol();
-                        justify-content: space-evenly;
+                        justify-content: space-between;
                         .property_name{
                             @include flexRow();
                             width: 100%;
@@ -226,7 +227,7 @@ body{
                             }
 
                             h1{
-                                font-size: 5rem;
+                                font-size: 4rem;
                                 font-family: 'Palette Mosaic';
                                 text-align: center;
                             }
@@ -242,14 +243,16 @@ body{
                     .slider_container{
                         @include flexCol();
                         span{
-                        @include flexRow();
-                        width: 100%;
+                            @include flexRow();
+                            width: 100%;
+                            justify-content: space-between  ;
                         }
                         justify-content: space-between;
                         .rangeSlider{
-                            width: 40%;
+                            width: 100%;
                             -webkit-appearance: none !important;
                             background: $lightpurp;
+                            margin-top: 1rem;
                             &::-webkit-slider-runnable-track {
                                 -webkit-appearance: none !important;
                                 background-color: $darkerPurp;
@@ -280,18 +283,18 @@ body{
                         }
                         h1,select{
                             transition: all ease .25s;
-                            width: 30%;
+                            width: 60%;
                             transform: translate(0%,-15%);
                             font-size: 1.25rem;
                             font-weight: 900;
                             background-color: $darkPurp;
                             border-right: .4rem solid $darkerPurp;
-                            padding: .5rem .5rem;
+                            padding: .75rem .5rem;
                             border-radius: 2rem;
                             text-align: center;
                         }
                         .slider_value{
-                            width: 10%;
+                            width: 20%;
                             margin: 0rem 1rem;
                         }
                         select{
@@ -299,7 +302,6 @@ body{
                             width: auto;
                             border: none;
                             border-right: .4rem solid $darkerPurp;
-                            margin-right: 1rem;
                             cursor: pointer;
                             option{
                                 font-weight: bolder;
@@ -321,13 +323,14 @@ body{
                             cursor: pointer;
                             transition: all ease .25s;
                             border-right: .5rem solid $darkerPurp;
+                            margin: 2rem 0rem;
                             margin-bottom: 1rem;
                             &:hover{
                                 transform: rotateY(10deg);
                                 background: $lighterpurp;
                                 border-right: .6rem solid $darkerPurp;  
                                 box-shadow: .5rem 0 1rem $darkerPurp;
-                                transform: translate(-2.5%);
+                                transform: translate(-.5%);
                             }
                         }
 

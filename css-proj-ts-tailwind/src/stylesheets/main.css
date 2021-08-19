@@ -280,6 +280,7 @@ body #root .App .outer-container main {
 body #root .App .outer-container main .property_display {
   height: inherit;
   width: inherit;
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -293,9 +294,9 @@ body #root .App .outer-container main .property_display {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body #root .App .outer-container main .property_display .property_name {
@@ -373,7 +374,7 @@ body #root .App .outer-container main .property_display .property_name .fa-forwa
 }
 
 body #root .App .outer-container main .property_display .property_name h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: 'Palette Mosaic';
   text-align: center;
 }
@@ -420,12 +421,16 @@ body #root .App .outer-container main .slider_container span {
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body #root .App .outer-container main .slider_container .rangeSlider {
-  width: 40%;
+  width: 100%;
   -webkit-appearance: none !important;
   background: blueviolet;
+  margin-top: 1rem;
 }
 
 body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-runnable-track {
@@ -466,20 +471,20 @@ body #root .App .outer-container main .slider_container .rangeSlider::-webkit-sl
 body #root .App .outer-container main .slider_container h1, body #root .App .outer-container main .slider_container select {
   -webkit-transition: all ease .25s;
   transition: all ease .25s;
-  width: 30%;
+  width: 60%;
   -webkit-transform: translate(0%, -15%);
           transform: translate(0%, -15%);
   font-size: 1.25rem;
   font-weight: 900;
   background-color: #5800aa;
   border-right: 0.4rem solid #360069;
-  padding: .5rem .5rem;
+  padding: .75rem .5rem;
   border-radius: 2rem;
   text-align: center;
 }
 
 body #root .App .outer-container main .slider_container .slider_value {
-  width: 10%;
+  width: 20%;
   margin: 0rem 1rem;
 }
 
@@ -488,7 +493,6 @@ body #root .App .outer-container main .slider_container select {
   width: auto;
   border: none;
   border-right: 0.4rem solid #360069;
-  margin-right: 1rem;
   cursor: pointer;
 }
 
@@ -513,6 +517,7 @@ body #root .App .outer-container main .slider_container button {
   -webkit-transition: all ease .25s;
   transition: all ease .25s;
   border-right: 0.5rem solid #360069;
+  margin: 2rem 0rem;
   margin-bottom: 1rem;
 }
 
@@ -523,8 +528,8 @@ body #root .App .outer-container main .slider_container button:hover {
   border-right: 0.6rem solid #360069;
   -webkit-box-shadow: 0.5rem 0 1rem #360069;
           box-shadow: 0.5rem 0 1rem #360069;
-  -webkit-transform: translate(-2.5%);
-          transform: translate(-2.5%);
+  -webkit-transform: translate(-0.5%);
+          transform: translate(-0.5%);
 }
 
 body #root .App .outer-container main .slider_container:hover select {

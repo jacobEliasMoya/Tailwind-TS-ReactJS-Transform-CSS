@@ -8,16 +8,7 @@ export const cssStyleSlice = createSlice({
     initialState,
     reducers:{
         getCssStyle : (state,action:PayloadAction<string>)=>{
-
-            if(state.length<1){
-                state.push(action.payload);
-            } 
-            
-            if(state.includes(action.payload)){
-            } else {
-                state.push(action.payload);
-            }
-
+            state.splice(0,1,action.payload);
             console.log(current(state));
         }
     }

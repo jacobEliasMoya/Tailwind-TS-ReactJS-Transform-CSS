@@ -32,7 +32,7 @@ const SliderContainer:React.FC<SliderInfo> = ({name}) =>{
         if(sliderVal!==0){
             obtainStyleString(name,sliderVal,valueOperator);
         } else {
-            return;
+            alert('Please select a style!')
         }
     }
 
@@ -52,6 +52,8 @@ const SliderContainer:React.FC<SliderInfo> = ({name}) =>{
                     <option value="vh">VH</option>
                     <option value="%">%</option>
                 </select>
+            </span>
+            <span>
                 <Sliders changelistener={displayPropertyValue}/>
             </span>
             <span>
