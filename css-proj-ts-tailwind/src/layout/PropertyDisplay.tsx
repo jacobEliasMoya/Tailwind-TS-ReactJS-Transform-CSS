@@ -36,7 +36,7 @@ const PropertyDisplay:React.FC=()=>{
                 <Icon onclick={decrementKey} faClass='fa fa-backward'/>
                 {cssProps.map(item=>{
                     if(cssProps.indexOf(item) === displayCssPropKey){
-                        return <PropertyName key={key2+=1} cssProperty={`${item.name} Property`}/>
+                        return <PropertyName key={key2+=1} cssProperty={item.name}/>
                     }
                 })}
                 <Icon onclick={incrementKey} faClass='fa fa-forward'/>

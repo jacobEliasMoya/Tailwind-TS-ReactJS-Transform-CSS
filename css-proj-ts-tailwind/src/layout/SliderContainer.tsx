@@ -25,7 +25,7 @@ const SliderContainer:React.FC<SliderInfo> = ({name}) =>{
     }
 
     const obtainStyleString = (stylname:string,styleval:number,valop:string) => {
-        dispatch(getCssStyle(`${stylname}:${styleval}${valop}`));
+        dispatch(getCssStyle({style:stylname,styleVal:`${styleval}${valop}`}));
     }
     
     const addStyle = () =>{
