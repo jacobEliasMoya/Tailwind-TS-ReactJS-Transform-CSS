@@ -560,6 +560,7 @@ body #root .App .outer-container .display-container .output_displayer {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 60%;
+  max-width: 60%;
   min-height: 70vh;
   background: blueviolet;
   border-right: 1rem solid #360069;

@@ -8,25 +8,37 @@ const OutputDisplayer :React.FC =()=>{
 
     const cssStyle = useAppSelector(state=>state.styleImp);
 
-    const initialArr:Array<CssObj> = [];
+    const initialArr:Boolean = false;
 
     const [styleArr,setStyleArr] = useState(initialArr);
 
+    const returnStyleArr = (mainStyle:string,mainValue:string) => {
+
+        let splitArr = mainStyle.split('');
+        splitArr[0] = splitArr[0].toLowerCase();
+        let splitInd:number;
+        let refinedProp:string; 
+
+        splitArr.forEach(splitlem=>{
+            if(splitlem === '-'){
+                splitInd = splitArr.indexOf(splitlem);
+                splitArr = splitArr.filter(elm=>elm !== '-');
+                splitArr[splitInd] = splitArr[splitInd].toUpperCase();
+            }
+        })
+        
+        refinedProp = splitArr.join('');
+        return {[refinedProp]:mainValue};
+    }
 
     useEffect(()=>{
-        if(cssStyle[0]){
-            setStyleArr(prevarr=>prevarr.splice(0,1,cssStyle[0]))
-        }
-    },[cssStyle])
-
-    useEffect(()=>{
-        console.log(styleArr[0]);
-    },[styleArr])
+        setStyleArr(true);
+    },[cssStyle,styleArr])
 
     return(
         <div className='output_displayer' >
-            <div  className="screen">
-                <div style={{width:`${styleArr[0] ? styleArr[0].styleVal :'10px'}`}} className='display_div'>
+            <div className="screen">
+                <div style={{...cssStyle[0] ? returnStyleArr(cssStyle[0].style,cssStyle[0].styleVal):null}} className='display_div'>
                 </div>
             </div>
             <div className="button_container">

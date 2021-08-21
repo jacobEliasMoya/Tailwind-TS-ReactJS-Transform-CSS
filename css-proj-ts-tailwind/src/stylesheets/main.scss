@@ -353,7 +353,9 @@ body{
                     .output_displayer{
                         @include flexCol();
                         justify-content: space-evenly;
+
                         width:60%;
+                        max-width: 60%;
                         min-height: 70vh;
                         background: $lightpurp;
                         border-right: 1rem solid $darkerPurp;
