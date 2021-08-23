@@ -12,6 +12,8 @@ const OutputDisplayer :React.FC =()=>{
 
     const [styleArr,setStyleArr] = useState(initialArr);
 
+    const [newObj,setNewObj] = useState({});
+
     const returnStyleArr = (mainStyle:string,mainValue:string) => {
 
         let splitArr = mainStyle.split('');
@@ -28,17 +30,20 @@ const OutputDisplayer :React.FC =()=>{
         })
         
         refinedProp = splitArr.join('');
-        return {[refinedProp]:mainValue};
+        setNewObj(prev=>prev = {...prev,...{[refinedProp]:mainValue}});
     }
 
     useEffect(()=>{
         setStyleArr(true);
+        if(cssStyle[0]){
+            returnStyleArr(cssStyle[0].style,cssStyle[0].styleVal);
+        }
     },[cssStyle,styleArr])
 
     return(
         <div className='output_displayer' >
             <div className="screen">
-                <div style={{...cssStyle[0] ? returnStyleArr(cssStyle[0].style,cssStyle[0].styleVal):null}} className='display_div'>
+                <div style={cssStyle[0] ? newObj : undefined} className='display_div'>
                 </div>
             </div>
             <div className="button_container">
