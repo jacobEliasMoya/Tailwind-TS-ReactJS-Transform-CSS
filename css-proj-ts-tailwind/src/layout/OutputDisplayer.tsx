@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { CssObj } from "../store/features/CssStyleSlice";
-import { current } from "@reduxjs/toolkit";
+import Icon from "../components/Icon";
+import { useAppSelector } from "../app/hooks";
 
 const OutputDisplayer :React.FC =()=>{
 
     const cssStyle = useAppSelector(state=>state.styleImp);
 
+    const displayDiv:HTMLDivElement|null = document.querySelector('.display_div');
+
     const initialArr:Boolean = false;
 
-    const [styleArr,setStyleArr] = useState(initialArr);
+    const [styleArr,setStyleArr] = useState<Boolean>(initialArr);
 
     const [newObj,setNewObj] = useState({});
+
+    const [saveStyleAttribute,setSaveStyleAttribute] = useState<String>('');
 
     const returnStyleArr = (mainStyle:string,mainValue:string) => {
 
@@ -28,17 +31,44 @@ const OutputDisplayer :React.FC =()=>{
                 splitArr[splitInd] = splitArr[splitInd].toUpperCase();
             }
         })
-        
         refinedProp = splitArr.join('');
         setNewObj(prev=>prev = {...prev,...{[refinedProp]:mainValue}});
     }
 
+ 
+
+    const copyCode = async () => {
+        let val = displayDiv?.getAttribute('style');
+        let newVal:string;
+        if(val){
+            newVal = val;
+            if(navigator.clipboard){
+                await navigator.clipboard.writeText(newVal);
+                let text = await navigator.clipboard.readText();
+                setSaveStyleAttribute(text);
+            }
+        }
+
+    }
+
+    const viewCode = () =>{
+        console.log(saveStyleAttribute.split('; '))
+    }
+
+    const resetToDefalt = () => {
+        setNewObj({});
+        setSaveStyleAttribute('');
+    }
+
     useEffect(()=>{
         setStyleArr(true);
-        if(cssStyle[0]){
-            returnStyleArr(cssStyle[0].style,cssStyle[0].styleVal);
-        }
+        cssStyle[0] ? returnStyleArr(cssStyle[0].style,cssStyle[0].styleVal) : console.log();
+
     },[cssStyle,styleArr])
+
+    useEffect(()=>{
+        saveStyleAttribute !== '' ? viewCode() : console.log();
+    },[saveStyleAttribute])
 
     return(
         <div className='output_displayer' >
@@ -47,8 +77,9 @@ const OutputDisplayer :React.FC =()=>{
                 </div>
             </div>
             <div className="button_container">
-                <Button buttonText='View Code' onclick={null}/>
-                <Button buttonText='Copy Code' onclick={null}/>
+                <Button buttonText='View Styles' onclick={null}/>
+                <Button buttonText='Copy Styles' onclick={copyCode}/>
+                <Icon faClass='fa fa-history' onclick={resetToDefalt} />
             </div>
         </div>
     )

@@ -595,6 +595,8 @@ body #root .App .outer-container .display-container .output_displayer .screen .d
   height: 10rem;
   width: 10rem;
   background: white;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
 }
 
 body #root .App .outer-container .display-container .output_displayer .button_container {
@@ -617,22 +619,22 @@ body #root .App .outer-container .display-container .output_displayer .button_co
           justify-content: space-between;
 }
 
-body #root .App .outer-container .display-container .output_displayer .button_container button {
-  width: 45%;
+body #root .App .outer-container .display-container .output_displayer .button_container button, body #root .App .outer-container .display-container .output_displayer .button_container i {
+  width: 35%;
   padding: 1rem 0rem;
   border: none;
   border-radius: 1rem;
   background: #5800aa;
   color: white;
   font-weight: bolder;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   cursor: pointer;
   -webkit-transition: all ease .25s;
   transition: all ease .25s;
   border-right: 0.5rem solid #360069;
 }
 
-body #root .App .outer-container .display-container .output_displayer .button_container button:hover {
+body #root .App .outer-container .display-container .output_displayer .button_container button:hover, body #root .App .outer-container .display-container .output_displayer .button_container i:hover {
   -webkit-transform: rotateY(10deg);
           transform: rotateY(10deg);
   background: #a24df1;
@@ -641,6 +643,12 @@ body #root .App .outer-container .display-container .output_displayer .button_co
           box-shadow: 0.5rem 0 1rem #360069;
   -webkit-transform: translate(-2.5%);
           transform: translate(-2.5%);
+}
+
+body #root .App .outer-container .display-container .output_displayer .button_container i {
+  width: auto;
+  padding: 1rem 1rem;
+  font-size: 2rem;
 }
 
 @-webkit-keyframes entryAnimation {
