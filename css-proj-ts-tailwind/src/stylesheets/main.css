@@ -599,6 +599,10 @@ body #root .App .outer-container .display-container .output_displayer .screen .d
   transition: all ease .25s;
 }
 
+body #root .App .outer-container .display-container .output_displayer .screen .styleOutput {
+  white-space: pre;
+}
+
 body #root .App .outer-container .display-container .output_displayer .button_container {
   width: 80%;
   display: -webkit-box;

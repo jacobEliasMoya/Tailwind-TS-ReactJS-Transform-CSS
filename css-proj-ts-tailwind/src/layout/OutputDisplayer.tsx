@@ -59,7 +59,7 @@ const OutputDisplayer :React.FC =()=>{
     }
 
     const viewCode = () =>{
-        return (<div>{saveStyleAttribute}</div>)
+        return (<div className='styleOutput' >{'.element { \n'  + saveStyleAttribute.replaceAll('; ', '; \n') + '\n}'}</div>)
     }
 
     const triggerCodeViewer = () => {
