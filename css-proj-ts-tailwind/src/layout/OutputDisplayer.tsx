@@ -12,10 +12,10 @@ const OutputDisplayer :React.FC =()=>{
     const initialArr:Boolean = false;
 
     const [styleArr,setStyleArr] = useState<Boolean>(initialArr);
-
     const [newObj,setNewObj] = useState({});
+    const [saveStyleAttribute,setSaveStyleAttribute] = useState<String>('No styles added yet.');
+    const [codeView,setCodeView] = useState<Boolean>(false);
 
-    const [saveStyleAttribute,setSaveStyleAttribute] = useState<String>('');
 
     const returnStyleArr = (mainStyle:string,mainValue:string) => {
 
@@ -35,11 +35,10 @@ const OutputDisplayer :React.FC =()=>{
         setNewObj(prev=>prev = {...prev,...{[refinedProp]:mainValue}});
     }
 
- 
-
     const copyCode = async () => {
         let val = displayDiv?.getAttribute('style');
         let newVal:string;
+
         if(val){
             newVal = val;
             if(navigator.clipboard){
@@ -48,16 +47,33 @@ const OutputDisplayer :React.FC =()=>{
                 setSaveStyleAttribute(text);
             }
         }
+    }
 
+    const saveStyleFunc = () => {
+        let val = displayDiv?.getAttribute('style');
+        let newVal:string;
+        if(val){
+            newVal=val;
+            setSaveStyleAttribute(newVal);
+        }
     }
 
     const viewCode = () =>{
-        console.log(saveStyleAttribute.split('; '))
+        return (<div>{saveStyleAttribute}</div>)
+    }
+
+    const triggerCodeViewer = () => {
+        setCodeView(prev=>!prev);
+        saveStyleFunc();
     }
 
     const resetToDefalt = () => {
         setNewObj({});
         setSaveStyleAttribute('');
+    }
+
+    const returnStyleDiv = () =>{
+        return (<div style={cssStyle[0] ? newObj : undefined} className='display_div'></div>)
     }
 
     useEffect(()=>{
@@ -66,18 +82,13 @@ const OutputDisplayer :React.FC =()=>{
 
     },[cssStyle,styleArr])
 
-    useEffect(()=>{
-        saveStyleAttribute !== '' ? viewCode() : console.log();
-    },[saveStyleAttribute])
-
     return(
         <div className='output_displayer' >
             <div className="screen">
-                <div style={cssStyle[0] ? newObj : undefined} className='display_div'>
-                </div>
+                {!codeView ? returnStyleDiv() : viewCode()}
             </div>
             <div className="button_container">
-                <Button buttonText='View Styles' onclick={null}/>
+                {!codeView ? <Button buttonText='View Styles' onclick={triggerCodeViewer}/> : <Button buttonText='View Div' onclick={triggerCodeViewer}/>}
                 <Button buttonText='Copy Styles' onclick={copyCode}/>
                 <Icon faClass='fa fa-history' onclick={resetToDefalt} />
             </div>
