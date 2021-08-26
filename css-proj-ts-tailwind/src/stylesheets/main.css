@@ -655,6 +655,41 @@ body #root .App .outer-container .display-container .output_displayer .button_co
   font-size: 2rem;
 }
 
+@media only screen and (max-width: 1000px) {
+  body #root .App {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  body #root .App nav {
+    padding: 0rem 0rem !important;
+    -webkit-box-pack: space-evenly !important;
+        -ms-flex-pack: space-evenly !important;
+            justify-content: space-evenly !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    width: 100vw !important;
+    height: 10vh !important;
+  }
+  body #root .App nav h1 {
+    -webkit-transform: none !important;
+            transform: none !important;
+    font-size: 2rem;
+  }
+  body #root .App .outer-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  body #root .App .outer-container main {
+    height: auto !important;
+  }
+}
+
 @-webkit-keyframes entryAnimation {
   0% {
     -webkit-transform: rotateX(45deg) rotateZ(0deg);

@@ -420,7 +420,33 @@ body{
     }
 }
 
-
+@media only screen and (max-width: 1000px) {
+    body{
+        #root{
+            .App{
+                flex-direction: column !important;
+                nav{
+                    padding: 0rem 0rem !important;
+                    justify-content: space-evenly !important;
+                    flex-direction: row !important;
+                    width: 100vw !important;
+                    height: 10vh !important;
+                    h1{
+                        transform: none !important;
+                        font-size: 2rem;
+                    }
+                }
+                .outer-container{
+                    flex-direction: column-reverse  ;
+                    main{
+                        height: auto !important;
+                        
+                    }
+                }
+            }
+        }
+    }    
+}
 
 
 @keyframes entryAnimation {
