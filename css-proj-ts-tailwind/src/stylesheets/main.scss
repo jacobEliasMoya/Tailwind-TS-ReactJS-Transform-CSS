@@ -42,6 +42,29 @@ $darkPurp :rgb(88, 0, 170);
 $lightpurp :blueviolet;
 $lighterpurp :rgb(162, 77, 241);
 
+::-webkit-scrollbar {
+    width: 2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    transition: all ease .5s !important;
+    background-color: $darkerPurp;
+    cursor: pointer;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: $darkPurp;
+    height: 5rem;
+    cursor: pointer;
+    border: .25rem solid $darkerPurp;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: $lighterpurp;
+}
+
 body{
     #root{
         .App{
@@ -370,8 +393,8 @@ body{
                             overflow: scroll;   
                             @include flexCol();
                             .display_div{
-                                height: 10rem;
-                                width: 10rem;
+                                height: 10px;
+                                width: 10px;
                                 background: white;
                                 transition: all ease .25s;
                             }
@@ -420,27 +443,275 @@ body{
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
     body{
         #root{
             .App{
                 flex-direction: column !important;
                 nav{
-                    padding: 0rem 0rem !important;
-                    justify-content: space-evenly !important;
+                    padding: 0rem 2rem;
                     flex-direction: row !important;
                     width: 100vw !important;
-                    height: 10vh !important;
+                    height: auto !important;
+                    border-bottom: 1rem solid $darkerPurp;
+                    border-right: 0rem solid $darkPurp;
+
                     h1{
                         transform: none !important;
-                        font-size: 2rem;
+                        font-size: 3rem;
                     }
                 }
-                .outer-container{
-                    flex-direction: column-reverse  ;
+                .outer-container {
+                    width: 100%;
+                    min-height: 100vh;
+                    height: auto;
+                    flex-direction: column-reverse;
+                    padding: 2rem;
                     main{
-                        height: auto !important;
-                        
+                        height: inherit;
+                        width: inherit;
+                        @include flexCol();
+                        .property_display{
+                            height: min-content;
+                            @include flexCol();
+                            justify-content: space-between;
+
+
+                            .property_name{
+                                @include flexRow();
+                                width: 100%;
+                                justify-content: space-between;
+                                padding: 0rem 2rem;
+                                background: $darkPurp;
+                                border-right: 1rem solid $darkerPurp;
+
+                                i{
+                                    @include flexCol();
+                                    font-size: 3rem;
+                                    width: 5rem;
+                                    height: 5rem;
+                                    border-radius: 1rem;
+                                    box-shadow: .5rem 0rem $darkPurp;
+                                    transition: all ease .5s;
+                                    cursor: pointer;
+                                    &:hover{
+                                        background: $darkerPurp;
+                                    }
+                                }
+    
+                                .fa-backward{
+                                    padding-right: .75rem;
+                                    &:hover{
+                                        transform: none;
+                                        box-shadow: 0rem 0rem $darkerPurp;
+                                    }
+                                }
+                                .fa-forward{
+                                    padding-left: .75rem;
+                                    box-shadow: -.5rem 0rem $darkPurp;
+    
+                                    &:hover{
+                                        transform: none;
+                                        box-shadow: 0rem 0rem $darkerPurp;
+                                    }
+                                }
+    
+                                h1{
+                                    font-size: 3.5rem;
+                                    font-family: 'Palette Mosaic';
+                                    text-align: center;
+                                }
+                            }
+                            .main_slider_container{
+                                width: 100%;
+                                background-color: $lightpurp;
+                                border-radius: 3rem;
+                                border-right: 1rem solid $darkerPurp;
+                                padding: 2rem;
+                            }
+                        }
+                        // ok above
+                        .slider_container{
+                            
+                            @include flexCol();
+                            span{
+                                @include flexRow();
+                                width: 100%;
+                                justify-content: space-between  ;
+                            }
+                            justify-content: space-between;
+                            .rangeSlider{
+                                width: 100%;
+                                -webkit-appearance: none !important;
+                                background: $lightpurp;
+                                margin-top: 1rem;
+                                &::-webkit-slider-runnable-track {
+                                    -webkit-appearance: none !important;
+                                    background-color: $darkerPurp;
+                                    border-radius: 2rem;
+                                    transition: all ease .25s;
+                                    height: 1rem;
+                                }
+                                &::-webkit-slider-thumb{
+                                    -webkit-appearance: none !important;
+                                    padding: .75rem;
+                                    cursor: pointer;
+                                    transition: all ease .25s;
+                                    width: 1rem;
+                                    background: white;
+                                    border-radius: 50%;
+                                    border: .5rem solid $darkPurp;
+                                    transform: translate(0%,-35%);
+                                    &:hover{
+                                        padding: 1.5rem;
+                                        transform: translate(0%,-40%);
+    
+                                    }
+                                    &:active{
+                                        background: $darkerPurp;
+                                        box-shadow: inset 0 0 .75rem black;
+                                    }
+                                }
+                            }
+                            h1,select{
+                                transition: all ease .25s;
+                                width: 60%;
+                                transform: translate(0%,-15%);
+                                font-size: 1.25rem;
+                                font-weight: 900;
+                                background-color: $darkPurp;
+                                border-right: .4rem solid $darkerPurp;
+                                padding: .75rem .5rem;
+                                border-radius: 2rem;
+                                text-align: center;
+                            }
+                            .slider_value{
+                                width: 20%;
+                                margin: 0rem 1rem;
+                            }
+                            select{
+                                color: white;
+                                width: auto;
+                                border: none;
+                                border-right: .4rem solid $darkerPurp;
+                                cursor: pointer;
+                                option{
+                                    font-weight: bolder;
+    
+                                }
+                                &:hover{
+                                    background: $darkPurp;
+                                }
+                            }
+                            button{
+                                width: 100%;
+                                padding: 1rem 0rem;
+                                border: none;
+                                border-radius: 1rem;
+                                background: $darkPurp;
+                                color: white;
+                                font-weight: bolder;
+                                font-size: 1.75rem;
+                                cursor: pointer;
+                                transition: all ease .25s;
+                                border-right: .5rem solid $darkerPurp;
+                                margin: 2rem 0rem;
+                                margin-bottom: 1rem;
+                                &:hover{
+                                    transform: rotateY(10deg);
+                                    background: $lighterpurp;
+                                    border-right: .6rem solid $darkerPurp;  
+                                    box-shadow: .5rem 0 1rem $darkerPurp;
+                                    transform: translate(-.5%);
+                                }
+                            }
+    
+                            &:hover{
+                                select{
+                                    background-color: $lighterpurp;
+                                    box-shadow: .75rem 0 1rem $darkerPurp;
+    
+                                }
+                                .rangeSlider{
+                                    &::-webkit-slider-runnable-track {
+                                        background-color: $darkPurp;
+    
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .main_slider_container{
+                        border-top-left-radius:0rem !important; 
+                        border-top-right-radius:0rem !important; 
+                    }
+                    .display-container{
+                        .output_displayer{
+                            @include flexCol();
+                            justify-content: space-evenly;
+                            min-width:100%;
+                            max-width: 90%;
+                            min-height: 70vh;
+                            border-right: 0rem solid $darkerPurp;
+                            border-radius: 3rem;
+                            border-bottom-left-radius: 0rem;
+                            border-bottom-right-radius: 0rem;
+                            border-right: 1rem solid $darkerPurp;
+                            padding: 0rem 2rem;
+
+                            .screen{
+                                width: 100%;
+                                max-width:100%;
+                                background: rgb(37, 37, 37);
+                                border-radius: 2rem;
+                                box-shadow: inset 0 0 1.25rem black;
+                                overflow: hidden;   
+                                @include flexCol();
+                                .display_div{
+                                    height: 10rem;
+                                    width: 10rem;
+                                    background: white;
+                                    transition: all ease .25s;
+                                }
+                                .styleOutput{
+                                    white-space: pre;
+                                }
+                            }
+    
+                            .button_container{
+                                width: 100%;
+                                @include flexRow();
+                                justify-content: space-between;
+    
+                                button,i{
+                                    width: 35%;
+                                    padding: 1rem 0rem;
+                                    border: none;
+                                    border-radius: 1rem;
+                                    background: $darkPurp;
+                                    color: white;
+                                    font-weight: bolder;
+                                    font-size: 1.25rem;
+                                    cursor: pointer;
+                                    transition: all ease .25s;
+                                    border-right: .5rem solid $darkerPurp;
+                                    &:hover{
+                                        transform: rotateY(10deg);
+                                        background: $lighterpurp;
+                                        border-right: .6rem solid $darkerPurp;  
+                                        box-shadow: .5rem 0 1rem $darkerPurp;
+                                        transform: translate(-2.5%);
+                                    }
+                                }
+    
+                                i{
+                                    width: auto;
+                                    padding: 1rem 1rem;
+                                    font-size: 2rem;
+    
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -448,6 +719,53 @@ body{
     }    
 }
 
+@media only screen and (max-width: 800px) {
+    body{
+        #root{
+            .App{
+                flex-direction: column !important;
+                nav{
+                    padding: 0rem 2rem;
+                    flex-direction: row !important;
+                    width: 100vw !important;
+                    height: auto !important;
+                    border-bottom: 0rem solid $darkerPurp;
+                    border-right: 0rem solid $darkPurp;
+
+                    h1{
+                        transform: none !important;
+                        font-size: 2rem;
+                        text-shadow: none;
+                    }
+                }
+                .outer-container {
+                    padding: 0rem;
+                    main{
+                        .property_display{
+                            .property_name{
+                                border-right: 0rem solid $darkerPurp;
+                            }
+                            .main_slider_container{
+                                border-right: 0rem solid $darkerPurp;
+                                border-radius: 0rem;
+                            }
+                        }
+                    }
+                    .display-container{
+                        .output_displayer{
+                            border-right: 0rem solid $darkerPurp;
+                            border-radius: 0rem;
+                            .screen{
+                                box-shadow: inset 0 0 3rem black;
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
 
 @keyframes entryAnimation {
     0%{
