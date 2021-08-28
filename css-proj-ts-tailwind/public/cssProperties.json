@@ -16,7 +16,57 @@
     },
     {
         "id": 4,
-        "name": "Border",
-        "properties": ["border"]
+        "name": "Margin",
+        "properties": ["margin"]
+    },
+    {
+        "id": 5,
+        "name": "Margin-Top",
+        "properties": ["Margin-Top"]
+    },
+    {
+        "id": 6,
+        "name": "Margin-Bottom",
+        "properties": ["Margin-Bottom"]
+    },
+    {
+        "id": 7,
+        "name": "Margin-Left",
+        "properties": ["Margin-Left"]
+    },
+    {
+        "id": 8,
+        "name": "Margin-Right",
+        "properties": ["Margin-Right"]
+    },
+    {
+        "id": 9,
+        "name": "Margin-Left",
+        "properties": ["Margin-Left"]
+    },
+    {
+        "id": 10,
+        "name": "Padding",
+        "properties": ["Padding"]
+    },
+    {
+        "id": 11,
+        "name": "Padding-Left",
+        "properties": ["Padding-Left"]
+    },
+    {
+        "id": 12,
+        "name": "Padding-Top",
+        "properties": ["Padding-top"]
+    },
+    {
+        "id": 13,
+        "name": "Padding-Right",
+        "properties": ["Padding-right"]
+    },
+    {
+        "id": 14,
+        "name": "Padding-Bottom",
+        "properties": ["Padding-Bottom"]
     }
 ]

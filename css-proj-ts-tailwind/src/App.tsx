@@ -10,7 +10,7 @@ const App:React.FC = () => {
 
   const dispatch = useAppDispatch();
   const stateBool = useAppSelector((state)=>state.appStart.appOn);
-  const jsonCSSPath = '/cssProperties.json';
+  const jsonCSSPath = 'https://jacobmoya.com/cssApp/cssProperties.json';
 
   const cssPropFectch = async (path:string) => {
     await fetch(path).then(result=>result.json()).then(data=>{
