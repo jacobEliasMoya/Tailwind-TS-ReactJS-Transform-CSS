@@ -7,7 +7,6 @@ const OutputDisplayer :React.FC =()=>{
 
     const cssStyle = useAppSelector(state=>state.styleImp);
 
-    const displayDiv:HTMLDivElement|null = document.querySelector('.display_div');
 
     const initialArr:Boolean = false;
 
@@ -36,6 +35,7 @@ const OutputDisplayer :React.FC =()=>{
     }
 
     const copyCode = async () => {
+        const displayDiv:HTMLDivElement|null = document.querySelector('.display_div');
         let val = displayDiv?.getAttribute('style');
         let newVal:string;
 
@@ -50,6 +50,7 @@ const OutputDisplayer :React.FC =()=>{
     }
 
     const saveStyleFunc = () => {
+        const displayDiv:HTMLDivElement|null = document.querySelector('.display_div');
         let val = displayDiv?.getAttribute('style');
         let newVal:string;
         if(val){
