@@ -52,6 +52,16 @@ body #root .App {
   color: white;
 }
 
+body #root .App .navMenu {
+  background: #5800aa;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
 body #root .App nav {
   padding: 2rem 0rem;
   display: -webkit-box;
@@ -70,10 +80,14 @@ body #root .App nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 12rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 10vw;
   background: blueviolet;
-  height: 100vh;
-  border-right: 3rem solid #5800aa;
+  min-height: 100vh;
+  border-right: 2vw solid #5800aa;
 }
 
 body #root .App nav i {
@@ -90,9 +104,7 @@ body #root .App nav i {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-size: 3rem;
-  width: 5rem;
-  height: 5rem;
+  font-size: 3vw;
   border-radius: 50%;
   -webkit-transition: all ease .25s;
   transition: all ease .25s;
@@ -107,7 +119,7 @@ body #root .App nav i:hover {
 }
 
 body #root .App nav h1 {
-  font-size: 4rem;
+  font-size: 3vw;
   font-family: 'Palette Mosaic';
   -webkit-transform: rotate(90deg) translate(-45%);
           transform: rotate(90deg) translate(-45%);
@@ -135,7 +147,7 @@ body #root .App .intro_menu {
           flex-direction: row;
   width: 100%;
   height: 100vh;
-  margin-left: 4rem;
+  margin-left: 10vw;
 }
 
 body #root .App .intro_menu div {
@@ -164,13 +176,14 @@ body #root .App .intro_menu div .keyword {
 }
 
 body #root .App .intro_menu div h1 {
-  font-size: 4rem;
+  font-size: 3vw;
   font-weight: bold;
+  text-align: center;
 }
 
 body #root .App .intro_menu div p {
   text-align: center;
-  font-size: 2.25rem;
+  font-size: 1.5vw;
   font-weight: bold;
   width: 75%;
 }
@@ -266,8 +279,6 @@ body #root .App .intro_menu .outer .five {
 }
 
 body #root .App .outer-container {
-  width: 100%;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,10 +288,17 @@ body #root .App .outer-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+  padding: 2rem;
+  margin-left: 10vw;
 }
 
 body #root .App .outer-container main {
@@ -302,9 +320,13 @@ body #root .App .outer-container main {
 }
 
 body #root .App .outer-container main .property_display {
-  height: inherit;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: inherit;
-  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -318,9 +340,7 @@ body #root .App .outer-container main .property_display {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 body #root .App .outer-container main .property_display .property_name {
@@ -337,10 +357,13 @@ body #root .App .outer-container main .property_display .property_name {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 80%;
+  width: 50%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: .5rem 2rem;
+  background: blueviolet;
+  border-right: 1rem solid #360069;
 }
 
 body #root .App .outer-container main .property_display .property_name i {
@@ -357,24 +380,20 @@ body #root .App .outer-container main .property_display .property_name i {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 3rem;
-  background: blueviolet;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
+  font-size: 2rem;
+  background: #5800aa;
+  padding: 1rem;
+  border-radius: 1rem;
   -webkit-box-shadow: 0.5rem 0rem #5800aa;
           box-shadow: 0.5rem 0rem #5800aa;
   -webkit-transition: all ease .5s;
   transition: all ease .5s;
   cursor: pointer;
+  width: 15%;
 }
 
 body #root .App .outer-container main .property_display .property_name i:hover {
-  background: #5800aa;
-}
-
-body #root .App .outer-container main .property_display .property_name .fa-backward {
-  padding-right: .75rem;
+  background: #360069;
 }
 
 body #root .App .outer-container main .property_display .property_name .fa-backward:hover {
@@ -385,7 +404,6 @@ body #root .App .outer-container main .property_display .property_name .fa-backw
 }
 
 body #root .App .outer-container main .property_display .property_name .fa-forward {
-  padding-left: .75rem;
   -webkit-box-shadow: -0.5rem 0rem #5800aa;
           box-shadow: -0.5rem 0rem #5800aa;
 }
@@ -398,17 +416,18 @@ body #root .App .outer-container main .property_display .property_name .fa-forwa
 }
 
 body #root .App .outer-container main .property_display .property_name h1 {
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-family: 'Palette Mosaic';
   text-align: center;
 }
 
 body #root .App .outer-container main .property_display .main_slider_container {
-  width: 80%;
+  width: 50%;
   background-color: blueviolet;
   border-radius: 3rem;
-  border-right: 1rem solid #5800aa;
+  border-right: 1rem solid #360069;
   padding: 2rem;
+  padding-bottom: 1rem;
 }
 
 body #root .App .outer-container main .slider_container {
@@ -536,7 +555,7 @@ body #root .App .outer-container main .slider_container button {
   background: #5800aa;
   color: white;
   font-weight: bolder;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   cursor: pointer;
   -webkit-transition: all ease .25s;
   transition: all ease .25s;
@@ -566,6 +585,11 @@ body #root .App .outer-container main .slider_container:hover .rangeSlider::-web
   background-color: #5800aa;
 }
 
+body #root .App .outer-container .main_slider_container {
+  border-top-left-radius: 0rem !important;
+  border-top-right-radius: 0rem !important;
+}
+
 body #root .App .outer-container .display-container .output_displayer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -583,23 +607,27 @@ body #root .App .outer-container .display-container .output_displayer {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 60%;
-  max-width: 60%;
-  min-height: 70vh;
-  background: blueviolet;
-  border-right: 1rem solid #360069;
+  min-width: 50%;
+  min-height: 50vh;
+  border-right: 0rem solid #360069;
   border-radius: 3rem;
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-right: 1rem solid #360069;
+  padding: 0rem 2rem;
+  background: blueviolet;
 }
 
 body #root .App .outer-container .display-container .output_displayer .screen {
-  width: 80%;
-  max-width: 80%;
-  min-height: 50vh;
+  min-height: 30vh;
+  max-height: 30vh;
+  width: 100%;
+  max-width: 100%;
   background: #252525;
   border-radius: 2rem;
   -webkit-box-shadow: inset 0 0 1.25rem black;
           box-shadow: inset 0 0 1.25rem black;
-  overflow: scroll;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -628,7 +656,7 @@ body #root .App .outer-container .display-container .output_displayer .screen .s
 }
 
 body #root .App .outer-container .display-container .output_displayer .button_container {
-  width: 80%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -868,108 +896,6 @@ body #root .App .outer-container .display-container .output_displayer .button_co
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  body #root .App .outer-container main .slider_container .rangeSlider {
-    width: 100%;
-    -webkit-appearance: none !important;
-    background: blueviolet;
-    margin-top: 1rem;
-  }
-  body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-runnable-track {
-    -webkit-appearance: none !important;
-    background-color: #360069;
-    border-radius: 2rem;
-    -webkit-transition: all ease .25s;
-    transition: all ease .25s;
-    height: 1rem;
-  }
-  body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-thumb {
-    -webkit-appearance: none !important;
-    padding: .75rem;
-    cursor: pointer;
-    -webkit-transition: all ease .25s;
-    transition: all ease .25s;
-    width: 1rem;
-    background: white;
-    border-radius: 50%;
-    border: 0.5rem solid #5800aa;
-    -webkit-transform: translate(0%, -35%);
-            transform: translate(0%, -35%);
-  }
-  body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-thumb:hover {
-    padding: 1.5rem;
-    -webkit-transform: translate(0%, -40%);
-            transform: translate(0%, -40%);
-  }
-  body #root .App .outer-container main .slider_container .rangeSlider::-webkit-slider-thumb:active {
-    background: #360069;
-    -webkit-box-shadow: inset 0 0 .75rem black;
-            box-shadow: inset 0 0 .75rem black;
-  }
-  body #root .App .outer-container main .slider_container h1, body #root .App .outer-container main .slider_container select {
-    -webkit-transition: all ease .25s;
-    transition: all ease .25s;
-    width: 60%;
-    -webkit-transform: translate(0%, -15%);
-            transform: translate(0%, -15%);
-    font-size: 1.25rem;
-    font-weight: 900;
-    background-color: #5800aa;
-    border-right: 0.4rem solid #360069;
-    padding: .75rem .5rem;
-    border-radius: 2rem;
-    text-align: center;
-  }
-  body #root .App .outer-container main .slider_container .slider_value {
-    width: 20%;
-    margin: 0rem 1rem;
-  }
-  body #root .App .outer-container main .slider_container select {
-    color: white;
-    width: auto;
-    border: none;
-    border-right: 0.4rem solid #360069;
-    cursor: pointer;
-  }
-  body #root .App .outer-container main .slider_container select option {
-    font-weight: bolder;
-  }
-  body #root .App .outer-container main .slider_container select:hover {
-    background: #5800aa;
-  }
-  body #root .App .outer-container main .slider_container button {
-    width: 100%;
-    padding: 1rem 0rem;
-    border: none;
-    border-radius: 1rem;
-    background: #5800aa;
-    color: white;
-    font-weight: bolder;
-    font-size: 1.75rem;
-    cursor: pointer;
-    -webkit-transition: all ease .25s;
-    transition: all ease .25s;
-    border-right: 0.5rem solid #360069;
-    margin: 2rem 0rem;
-    margin-bottom: 1rem;
-  }
-  body #root .App .outer-container main .slider_container button:hover {
-    -webkit-transform: rotateY(10deg);
-            transform: rotateY(10deg);
-    background: #a24df1;
-    border-right: 0.6rem solid #360069;
-    -webkit-box-shadow: 0.5rem 0 1rem #360069;
-            box-shadow: 0.5rem 0 1rem #360069;
-    -webkit-transform: translate(-0.5%);
-            transform: translate(-0.5%);
-  }
-  body #root .App .outer-container main .slider_container:hover select {
-    background-color: #a24df1;
-    -webkit-box-shadow: 0.75rem 0 1rem #360069;
-            box-shadow: 0.75rem 0 1rem #360069;
-  }
-  body #root .App .outer-container main .slider_container:hover .rangeSlider::-webkit-slider-runnable-track {
-    background-color: #5800aa;
-  }
   body #root .App .outer-container .main_slider_container {
     border-top-left-radius: 0rem !important;
     border-top-right-radius: 0rem !important;
@@ -1023,63 +949,8 @@ body #root .App .outer-container .display-container .output_displayer .button_co
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  body #root .App .outer-container .display-container .output_displayer .screen .display_div {
-    height: 10rem;
-    width: 10rem;
-    background: white;
-    -webkit-transition: all ease .25s;
-    transition: all ease .25s;
-  }
-  body #root .App .outer-container .display-container .output_displayer .screen .styleOutput {
-    white-space: pre;
-  }
   body #root .App .outer-container .display-container .output_displayer .button_container {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  body #root .App .outer-container .display-container .output_displayer .button_container button, body #root .App .outer-container .display-container .output_displayer .button_container i {
-    width: 35%;
-    padding: 1rem 0rem;
-    border: none;
-    border-radius: 1rem;
-    background: #5800aa;
-    color: white;
-    font-weight: bolder;
-    font-size: 1.25rem;
-    cursor: pointer;
-    -webkit-transition: all ease .25s;
-    transition: all ease .25s;
-    border-right: 0.5rem solid #360069;
-  }
-  body #root .App .outer-container .display-container .output_displayer .button_container button:hover, body #root .App .outer-container .display-container .output_displayer .button_container i:hover {
-    -webkit-transform: rotateY(10deg);
-            transform: rotateY(10deg);
-    background: #a24df1;
-    border-right: 0.6rem solid #360069;
-    -webkit-box-shadow: 0.5rem 0 1rem #360069;
-            box-shadow: 0.5rem 0 1rem #360069;
-    -webkit-transform: translate(-2.5%);
-            transform: translate(-2.5%);
-  }
-  body #root .App .outer-container .display-container .output_displayer .button_container i {
-    width: auto;
-    padding: 1rem 1rem;
-    font-size: 2rem;
   }
   body #root .App .intro_menu {
     margin-left: 0rem;

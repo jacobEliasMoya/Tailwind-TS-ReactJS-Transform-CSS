@@ -73,19 +73,31 @@ body{
             @include fullScreener();
             background-color: black;
             color: white;
+            .navMenu{
+                background:$darkPurp ;
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                z-index: 1000;
+                top: 0;
+                left: 0;
+
+            }
             nav{
                 padding: 2rem 0rem;
                 @include flexCol();
                 justify-content: space-between;
-                width: 12rem;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1001;
+                width: 10vw;
                 background: blueviolet;
-                height: 100vh;
-                border-right: 3rem solid $darkPurp;
+                min-height: 100vh;
+                border-right: 2vw solid $darkPurp;
                 i{
                     @include flexRow();
-                    font-size: 3rem;
-                    width: 5rem;
-                    height: 5rem;
+                    font-size: 3vw;
                     border-radius: 50%;
                     transition: all ease .25s;
                     text-shadow: .75rem 0 0 $darkPurp;
@@ -97,7 +109,7 @@ body{
                     }
                 }
                 h1{
-                    font-size: 4rem;
+                    font-size: 3vw;
                     font-family: 'Palette Mosaic';
                     transform: rotate(90deg) translate(-45%);
                     text-align: center;
@@ -110,7 +122,7 @@ body{
                 @include flexRow();
                 width: 100%;
                 height: 100vh;
-                margin-left: 4rem;
+                margin-left: 10vw;
                 div{
                     .keyword{
                         color:$lighterpurp;
@@ -120,12 +132,13 @@ body{
                     justify-content: space-evenly;
                     width: 50%;
                     h1{
-                        font-size: 4rem;
+                        font-size: 3vw;
                         font-weight: bold;
+                        text-align: center;
                     }
                     p{
                         text-align: center;
-                        font-size: 2.25rem;
+                        font-size: 1.5vw;
                         font-weight: bold;
                         width: 75%;
                     }
@@ -200,47 +213,52 @@ body{
                 }
             }
             .outer-container {
+                @include flexCol();
                 width: 100%;
-                height: 100vh;
-                @include flexRow();
+                min-height: 100vh;
+                height: auto;
+                flex-direction: column-reverse;
+                padding: 2rem;
+                margin-left: 10vw;
                 main{
                     height: inherit;
                     width: inherit;
                     @include flexCol();
                     .property_display{
-                        height: inherit;
+                        height: min-content;
+                        justify-content: space-between;
                         width: inherit;
-                        height: 70vh;
                         @include flexCol();
                         justify-content: space-between;
                         .property_name{
                             @include flexRow();
-                            width: 80%;
+                            width: 50%;
                             justify-content: space-between;
+                            padding: .5rem 2rem;
+                            background: $lightpurp;
+                            border-right: 1rem solid $darkerPurp;
                             i{
                                 @include flexCol();
-                                font-size: 3rem;
-                                background: $lightpurp;
-                                width: 5rem;
-                                height: 5rem;
-                                border-radius: 50%;
+                                font-size: 2rem;
+                                background: $darkPurp;
+                                padding: 1rem;
+                                border-radius: 1rem;
                                 box-shadow: .5rem 0rem $darkPurp;
                                 transition: all ease .5s;
                                 cursor: pointer;
+                                width: 15%;
                                 &:hover{
-                                    background: $darkPurp;
+                                    background: $darkerPurp;
                                 }
                             }
 
                             .fa-backward{
-                                padding-right: .75rem;
                                 &:hover{
                                     transform: rotateY(20deg);
                                     box-shadow: 1rem 0rem $darkerPurp;
                                 }
                             }
                             .fa-forward{
-                                padding-left: .75rem;
                                 box-shadow: -.5rem 0rem $darkPurp;
 
                                 &:hover{
@@ -250,17 +268,18 @@ body{
                             }
 
                             h1{
-                                font-size: 3.5rem;
+                                font-size: 2rem;
                                 font-family: 'Palette Mosaic';
                                 text-align: center;
                             }
                         }
                         .main_slider_container{
-                            width: 80%;
+                            width: 50%;
                             background-color: $lightpurp;
                             border-radius: 3rem;
-                            border-right: 1rem solid $darkPurp;
+                            border-right: 1rem solid $darkerPurp;
                             padding: 2rem;
+                            padding-bottom: 1rem
                         }
                     }
                     .slider_container{
@@ -342,7 +361,7 @@ body{
                             background: $darkPurp;
                             color: white;
                             font-weight: bolder;
-                            font-size: 1.75rem;
+                            font-size: 1.25rem;
                             cursor: pointer;
                             transition: all ease .25s;
                             border-right: .5rem solid $darkerPurp;
@@ -372,25 +391,32 @@ body{
                         }
                     }
                 }
+                .main_slider_container{
+                    border-top-left-radius:0rem !important; 
+                    border-top-right-radius:0rem !important; 
+                }
                 .display-container{
                     .output_displayer{
                         @include flexCol();
                         justify-content: space-evenly;
-
-                        width:60%;
-                        max-width: 60%;
-                        min-height: 70vh;
-                        background: $lightpurp;
-                        border-right: 1rem solid $darkerPurp;
+                        min-width:50%;
+                        min-height: 50vh;
+                        border-right: 0rem solid $darkerPurp;
                         border-radius: 3rem;
+                        border-bottom-left-radius: 0rem;
+                        border-bottom-right-radius: 0rem;
+                        border-right: 1rem solid $darkerPurp;
+                        padding: 0rem 2rem;
+                        background: $lightpurp;
                         .screen{
-                            width: 80%;
-                            max-width:80%;
-                            min-height: 50vh;
+                            min-height: 30vh;
+                            max-height: 30vh;
+                            width: 100%;
+                            max-width:100%;
                             background: rgb(37, 37, 37);
                             border-radius: 2rem;
                             box-shadow: inset 0 0 1.25rem black;
-                            overflow: scroll;   
+                            overflow: hidden;   
                             @include flexCol();
                             .display_div{
                                 height: 10px;
@@ -404,7 +430,7 @@ body{
                         }
 
                         .button_container{
-                            width: 80%;
+                            width: 100%;
                             @include flexRow();
                             justify-content: space-between;
 
@@ -540,105 +566,6 @@ body{
                                 justify-content: space-between  ;
                             }
                             justify-content: space-between;
-                            .rangeSlider{
-                                width: 100%;
-                                -webkit-appearance: none !important;
-                                background: $lightpurp;
-                                margin-top: 1rem;
-                                &::-webkit-slider-runnable-track {
-                                    -webkit-appearance: none !important;
-                                    background-color: $darkerPurp;
-                                    border-radius: 2rem;
-                                    transition: all ease .25s;
-                                    height: 1rem;
-                                }
-                                &::-webkit-slider-thumb{
-                                    -webkit-appearance: none !important;
-                                    padding: .75rem;
-                                    cursor: pointer;
-                                    transition: all ease .25s;
-                                    width: 1rem;
-                                    background: white;
-                                    border-radius: 50%;
-                                    border: .5rem solid $darkPurp;
-                                    transform: translate(0%,-35%);
-                                    &:hover{
-                                        padding: 1.5rem;
-                                        transform: translate(0%,-40%);
-    
-                                    }
-                                    &:active{
-                                        background: $darkerPurp;
-                                        box-shadow: inset 0 0 .75rem black;
-                                    }
-                                }
-                            }
-                            h1,select{
-                                transition: all ease .25s;
-                                width: 60%;
-                                transform: translate(0%,-15%);
-                                font-size: 1.25rem;
-                                font-weight: 900;
-                                background-color: $darkPurp;
-                                border-right: .4rem solid $darkerPurp;
-                                padding: .75rem .5rem;
-                                border-radius: 2rem;
-                                text-align: center;
-                            }
-                            .slider_value{
-                                width: 20%;
-                                margin: 0rem 1rem;
-                            }
-                            select{
-                                color: white;
-                                width: auto;
-                                border: none;
-                                border-right: .4rem solid $darkerPurp;
-                                cursor: pointer;
-                                option{
-                                    font-weight: bolder;
-    
-                                }
-                                &:hover{
-                                    background: $darkPurp;
-                                }
-                            }
-                            button{
-                                width: 100%;
-                                padding: 1rem 0rem;
-                                border: none;
-                                border-radius: 1rem;
-                                background: $darkPurp;
-                                color: white;
-                                font-weight: bolder;
-                                font-size: 1.75rem;
-                                cursor: pointer;
-                                transition: all ease .25s;
-                                border-right: .5rem solid $darkerPurp;
-                                margin: 2rem 0rem;
-                                margin-bottom: 1rem;
-                                &:hover{
-                                    transform: rotateY(10deg);
-                                    background: $lighterpurp;
-                                    border-right: .6rem solid $darkerPurp;  
-                                    box-shadow: .5rem 0 1rem $darkerPurp;
-                                    transform: translate(-.5%);
-                                }
-                            }
-    
-                            &:hover{
-                                select{
-                                    background-color: $lighterpurp;
-                                    box-shadow: .75rem 0 1rem $darkerPurp;
-    
-                                }
-                                .rangeSlider{
-                                    &::-webkit-slider-runnable-track {
-                                        background-color: $darkPurp;
-    
-                                    }
-                                }
-                            }
                         }
                     }
                     .main_slider_container{
@@ -667,49 +594,10 @@ body{
                                 box-shadow: inset 0 0 1.25rem black;
                                 overflow: hidden;   
                                 @include flexCol();
-                                .display_div{
-                                    height: 10rem;
-                                    width: 10rem;
-                                    background: white;
-                                    transition: all ease .25s;
-                                }
-                                .styleOutput{
-                                    white-space: pre;
-                                }
                             }
     
                             .button_container{
                                 width: 100%;
-                                @include flexRow();
-                                justify-content: space-between;
-    
-                                button,i{
-                                    width: 35%;
-                                    padding: 1rem 0rem;
-                                    border: none;
-                                    border-radius: 1rem;
-                                    background: $darkPurp;
-                                    color: white;
-                                    font-weight: bolder;
-                                    font-size: 1.25rem;
-                                    cursor: pointer;
-                                    transition: all ease .25s;
-                                    border-right: .5rem solid $darkerPurp;
-                                    &:hover{
-                                        transform: rotateY(10deg);
-                                        background: $lighterpurp;
-                                        border-right: .6rem solid $darkerPurp;  
-                                        box-shadow: .5rem 0 1rem $darkerPurp;
-                                        transform: translate(-2.5%);
-                                    }
-                                }
-    
-                                i{
-                                    width: auto;
-                                    padding: 1rem 1rem;
-                                    font-size: 2rem;
-    
-                                }
                             }
                         }
                     }
