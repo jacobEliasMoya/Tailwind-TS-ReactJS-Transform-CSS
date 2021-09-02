@@ -721,7 +721,7 @@ body #root .App .outer-container .display-container .output_displayer .button_co
         -ms-flex-direction: row !important;
             flex-direction: row !important;
     width: 100vw !important;
-    height: auto !important;
+    height: 10vh !important;
     border-bottom: 1rem solid #360069;
     border-right: 0rem solid #5800aa;
   }
@@ -988,6 +988,7 @@ body #root .App .outer-container .display-container .output_displayer .button_co
             flex-direction: row !important;
     width: 100vw !important;
     height: auto !important;
+    min-height: 10vh;
     border-bottom: 0rem solid #360069;
     border-right: 0rem solid #5800aa;
   }
