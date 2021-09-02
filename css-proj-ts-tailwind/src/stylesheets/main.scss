@@ -478,7 +478,7 @@ body{
                     padding: 0rem 2rem;
                     flex-direction: row !important;
                     width: 100vw !important;
-                    height: 10vh !important;
+                    min-height: 10vh;
                     border-bottom: 1rem solid $darkerPurp;
                     border-right: 0rem solid $darkPurp;
 
@@ -634,7 +634,6 @@ body{
                     flex-direction: row !important;
                     width: 100vw !important;
                     height: auto !important;
-                    min-height: 10vh;
                     border-bottom: 0rem solid $darkerPurp;
                     border-right: 0rem solid $darkPurp;
 
