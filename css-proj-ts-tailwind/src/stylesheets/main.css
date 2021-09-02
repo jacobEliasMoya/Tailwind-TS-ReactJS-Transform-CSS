@@ -54,12 +54,54 @@ body #root .App {
 
 body #root .App .navMenu {
   background: #5800aa;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: 1000;
   top: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+body #root .App .navMenu button {
+  width: 40%;
+  padding: 1%;
+  margin: 1%;
+  -webkit-transform: translate(10%);
+          transform: translate(10%);
+  border: none;
+  border-radius: 3rem;
+  background: blueviolet;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+  -webkit-box-shadow: 0.75rem 0rem #360069;
+          box-shadow: 0.75rem 0rem #360069;
+  text-shadow: 0.5rem 0rem #360069;
+}
+
+body #root .App .navMenu button:hover {
+  background: #a24df1;
 }
 
 body #root .App nav {
@@ -649,6 +691,7 @@ body #root .App .outer-container .display-container .output_displayer .screen .d
   background: white;
   -webkit-transition: all ease .25s;
   transition: all ease .25s;
+  position: absolute;
 }
 
 body #root .App .outer-container .display-container .output_displayer .screen .styleOutput {
@@ -725,10 +768,12 @@ body #root .App .outer-container .display-container .output_displayer .button_co
     border-bottom: 1rem solid #360069;
     border-right: 0rem solid #5800aa;
   }
+  body #root .App nav i {
+    font-size: 4vw;
+  }
   body #root .App nav h1 {
     -webkit-transform: none !important;
             transform: none !important;
-    font-size: 3rem;
   }
   body #root .App .outer-container {
     width: 100%;
@@ -739,6 +784,7 @@ body #root .App .outer-container .display-container .output_displayer .button_co
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
     padding: 2rem;
+    margin-left: 0vw;
   }
   body #root .App .outer-container main {
     height: inherit;
@@ -848,7 +894,7 @@ body #root .App .outer-container .display-container .output_displayer .button_co
             box-shadow: 0rem 0rem #360069;
   }
   body #root .App .outer-container main .property_display .property_name h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-family: 'Palette Mosaic';
     text-align: center;
   }
@@ -990,6 +1036,8 @@ body #root .App .outer-container .display-container .output_displayer .button_co
     height: auto !important;
     border-bottom: 0rem solid #360069;
     border-right: 0rem solid #5800aa;
+    -webkit-box-shadow: 0 0 1rem black;
+            box-shadow: 0 0 1rem black;
   }
   body #root .App nav h1 {
     -webkit-transform: none !important;
@@ -1002,6 +1050,12 @@ body #root .App .outer-container .display-container .output_displayer .button_co
   }
   body #root .App .outer-container main .property_display .property_name {
     border-right: 0rem solid #360069;
+  }
+  body #root .App .outer-container main .property_display .property_name h1 {
+    font-size: 1rem;
+  }
+  body #root .App .outer-container main .property_display .property_name i {
+    font-size: 1.5rem;
   }
   body #root .App .outer-container main .property_display .main_slider_container {
     border-right: 0rem solid #360069;

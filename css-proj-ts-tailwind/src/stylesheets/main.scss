@@ -75,13 +75,36 @@ body{
             color: white;
             .navMenu{
                 background:$darkPurp ;
+                transition: all ease .5s;
                 width: 100vw;
                 height: 100vh;
                 position: fixed;
                 z-index: 1000;
                 top: 0;
                 left: 0;
+                @include flexRow();
+                flex-wrap: wrap;
+                overflow: scroll;
+                overflow-x:hidden;
+                button{
+                    width: 40%;
+                    padding: 1%;
+                    margin: 1%;
+                    transform: translate(10%);
+                    border: none;
+                    border-radius: 3rem;
+                    background: $lightpurp;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: all ease .25s;
+                    box-shadow: .75rem 0rem $darkerPurp;
+                    text-shadow: .5rem 0rem $darkerPurp;
+                    &:hover{
+                        background: $lighterpurp;
+                    }
 
+                }
             }
             nav{
                 padding: 2rem 0rem;
@@ -423,6 +446,7 @@ body{
                                 width: 10px;
                                 background: white;
                                 transition: all ease .25s;
+                                position:absolute;
                             }
                             .styleOutput{
                                 white-space: pre;
@@ -482,9 +506,12 @@ body{
                     border-bottom: 1rem solid $darkerPurp;
                     border-right: 0rem solid $darkPurp;
 
+                    i{
+                        font-size: 4vw;
+                    }
+
                     h1{
                         transform: none !important;
-                        font-size: 3rem;
                     }
                 }
                 .outer-container {
@@ -493,6 +520,7 @@ body{
                     height: auto;
                     flex-direction: column-reverse;
                     padding: 2rem;
+                    margin-left: 0vw;
                     main{
                         height: inherit;
                         width: inherit;
@@ -543,7 +571,7 @@ body{
                                 }
     
                                 h1{
-                                    font-size: 3.5rem;
+                                    font-size: 2rem;
                                     font-family: 'Palette Mosaic';
                                     text-align: center;
                                 }
@@ -563,7 +591,7 @@ body{
                             span{
                                 @include flexRow();
                                 width: 100%;
-                                justify-content: space-between  ;
+                                justify-content: space-between;
                             }
                             justify-content: space-between;
                         }
@@ -636,7 +664,7 @@ body{
                     height: auto !important;
                     border-bottom: 0rem solid $darkerPurp;
                     border-right: 0rem solid $darkPurp;
-
+                    box-shadow:0 0 1rem black ;
                     h1{
                         transform: none !important;
                         font-size: 2rem;
@@ -649,6 +677,13 @@ body{
                         .property_display{
                             .property_name{
                                 border-right: 0rem solid $darkerPurp;
+                                h1{
+                                    font-size: 1rem;
+                                }
+                                i{
+                                    font-size: 1.5rem;
+                                }
+                                
                             }
                             .main_slider_container{
                                 border-right: 0rem solid $darkerPurp;
